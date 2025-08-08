@@ -1,0 +1,2011 @@
+mysql> use hrdb;
+Database changed
+mysql> show tables;
++----------------+
+| Tables_in_hrdb |
++----------------+
+| emp            |
+| person         |
+| reg            |
++----------------+
+3 rows in set (0.01 sec)
+
+mysql> select * from reg;
++------+----------+
+| pid  | name     |
++------+----------+
+| PID3 | New User |
+| PID4 | New User |
++------+----------+
+2 rows in set (0.00 sec)
+
+mysql> select * from person;
++------+-----------------+----------------------+-----------+------------+------+
+| id   | name            | address              | city      | phoneno    | age  |
++------+-----------------+----------------------+-----------+------------+------+
+|    1 | Aarav Sharma    | 123 MG Road          | Delhi     | 9876543210 |   25 |
+|    2 | Ananya Verma    | 456 Brigade Road     | Bangalore | 9876543211 |   30 |
+|    3 | Vihaan Patel    | 789 Anna Salai       | Chennai   | 9876543212 |   28 |
+|    4 | Siya Reddy      | 321 Banjara Hills    | Hyderabad | 9876543213 |   22 |
+|    5 | Ishaan Gupta    | 654 Marine Drive     | Mumbai    | 9876543214 |   27 |
+|    6 | Saanvi Rao      | 987 Park Street      | Kolkata   | 9876543215 |   24 |
+|    7 | Arjun Mehta     | 234 JLN Marg         | Jaipur    | 9876543216 |   29 |
+|    8 | Mira Joshi      | 567 Law College Road | Pune      | 9876543217 |   26 |
+|    9 | Kabir Nair      | 890 Carter Road      | Mumbai    | 9876543218 |   31 |
+|   10 | Diya Ahuja      | 345 Residency Road   | Bangalore | 9876543219 |   23 |
+|   11 | Rohit Khanna    | 678 MG Road          | Delhi     | 9876543220 |   34 |
+|   12 | Nisha Pandey    | 123 ITPL Road        | Bangalore | 9876543221 |   29 |
+|   13 | Ayaan Singh     | 456 Nungambakkam     | Chennai   | 9876543222 |   27 |
+|   14 | Riya Rao        | 789 Jubilee Hills    | Hyderabad | 9876543223 |   22 |
+|   15 | Karan Jain      | 321 Nariman Point    | Mumbai    | 9876543224 |   28 |
+|   16 | Priya Ghosh     | 654 Elgin Road       | Kolkata   | 9876543225 |   26 |
+|   17 | Rakesh Sharma   | 987 Ajmer Road       | Jaipur    | 9876543226 |   33 |
+|   18 | Sonal Desai     | 234 FC Road          | Pune      | 9876543227 |   30 |
+|   19 | Tanya Kapoor    | 567 Juhu Beach       | Mumbai    | 9876543228 |   32 |
+|   20 | Rahul Bansal    | 890 Church Street    | Bangalore | 9876543229 |   24 |
+|  300 | Ravi Kumar      | MG Road              | Mumbai    | 9876543210 |   28 |
+|  301 | Sita Verma      | Ring Road            | Delhi     | 9812345678 |   32 |
+|  302 | Amit Sharma     | Park Street          | Kolkata   | 9823456781 |   25 |
+|  303 | Pooja Singh     | Sector 15            | Noida     | 9876501234 |   29 |
+|  304 | Manoj Patil     | FC Road              | Pune      | 9765432109 |   40 |
+|  305 | Anjali Joshi    | JP Nagar             | Bangalore | 9845123456 |   31 |
+|  306 | Rahul Desai     | Ashok Nagar          | Chennai   | 9956784321 |   27 |
+|  307 | Sneha Mehta     | Alkapuri             | Vadodara  | 9632147850 |   35 |
+|  308 | Ramesh Naik     | Rajajinagar          | Bangalore | 9908765432 |   38 |
+|  309 | Kiran Kulkarni  | Swargate             | Pune      | 9812233445 |   22 |
+|  310 | Priya Bhatia    | Andheri East         | Mumbai    | 9877891234 |   30 |
+|  311 | Vikas Thakur    | Saket                | Delhi     | 9753102468 |   26 |
+|  312 | Deepa Reddy     | Charminar            | Hyderabad | 9848001122 |   34 |
+|  313 | Suresh Yadav    | Red Hills            | Chennai   | 9823401122 |   36 |
+|  314 | Neha Goyal      | Banjara Hills        | Hyderabad | 9856754321 |   24 |
+|  315 | Arun Mishra     | Gomti Nagar          | Lucknow   | 9888888888 |   33 |
+|  316 | Meena Pandey    | Hazratganj           | Lucknow   | 9911223344 |   29 |
+|  317 | Rajesh Kapoor   | Churchgate           | Mumbai    | 9844411223 |   41 |
+|  318 | Komal Jain      | Civil Lines          | Nagpur    | 9723451234 |   23 |
+|  319 | Nitin Chauhan   | Tilak Nagar          | Jaipur    | 9898761234 |   37 |
+| 1007 | Amit Sharma     | 12 MG Road           | Delhi     | 9876543210 |   29 |
+| 1012 | Priya Joshi     | 23 Law College Road  | Mumbai    | 9908765432 |   27 |
+| 1019 | Arjun Pandey    | 21 Fraser Road       | Patna     | 9922334455 |   38 |
+| 1023 | Neha Patil      | 45 FC Road           | Pune      | 9823456710 |   24 |
+| 1029 | Pooja Nair      | 18 MG Road           | Bangalore | 9876545678 |   26 |
+| 1031 | Rahul Mehta     | 3 Navrangpura        | Ahmedabad | 9876501234 |   36 |
+| 1037 | Meena Yadav     | 30 Hazratganj        | Lucknow   | 9811122233 |   30 |
+| 1044 | Anjali Deshmukh | 7 Banjara Hills      | Hyderabad | 9845123456 |   31 |
+| 1051 | Manoj Chavan    | 88 Bajirao Road      | Pune      | 9898989898 |   40 |
+| 1059 | Sneha Iyer      | 5 Indira Nagar       | Bangalore | 9823450987 |   28 |
+| 1068 | Vikram Singh    | 55 Connaught Place   | Delhi     | 9834567890 |   41 |
+| 1076 | Suresh Reddy    | 17 Jubilee Hills     | Hyderabad | 9812345670 |   45 |
+| 1081 | Kiran Das       | 9 Salt Lake          | Kolkata   | 9901234567 |   33 |
+| 1091 | Swati Kulkarni  | 6 Karve Road         | Pune      | 9844001122 |   25 |
+| 1098 | Ravi Kumar      | 88 Anna Nagar        | Chennai   | 9876543120 |   32 |
++------+-----------------+----------------------+-----------+------------+------+
+55 rows in set (0.00 sec)
+
+mysql> select * from emp;
++--------+-----------+---------------------------+-----------------------+-----------+------------+
+| emp_id | person_id | company_name              | position              | salary    | start_date |
++--------+-----------+---------------------------+-----------------------+-----------+------------+
+|      1 |         1 | Infosys                   | Software Engineer     |  60000.00 | 2019-01-15 |
+|      2 |         2 | Wipro                     | Project Manager       |  85000.00 | 2018-03-22 |
+|      3 |         3 | Tata Consultancy Services | Data Analyst          |  55000.00 | 2020-06-01 |
+|      4 |         4 | Tech Mahindra             | Business Analyst      |  50000.00 | 2019-07-10 |
+|      5 |         5 | Accenture                 | Senior Developer      |  70000.00 | 2017-11-05 |
+|      6 |         6 | Cognizant                 | HR Manager            |  65000.00 | 2021-02-18 |
+|      7 |         7 | HCL Technologies          | DevOps Engineer       |  75000.00 | 2018-08-25 |
+|      8 |         8 | IBM                       | Consultant            |  90000.00 | 2020-09-30 |
+|      9 |         9 | Microsoft                 | Product Manager       | 120000.00 | 2016-12-11 |
+|     10 |        10 | Google                    | UX Designer           |  95000.00 | 2019-04-20 |
+|     11 |        11 | TCS                       | Senior Consultant     |  85000.00 | 2018-02-12 |
+|     12 |        12 | Flipkart                  | Data Scientist        |  95000.00 | 2020-07-15 |
+|     13 |        13 | Cognizant                 | Full Stack Developer  |  75000.00 | 2019-04-18 |
+|     14 |        14 | Amazon                    | Operations Manager    |  80000.00 | 2021-05-21 |
+|     15 |        15 | Reliance Industries       | Business Analyst      |  70000.00 | 2017-03-01 |
+|     16 |        16 | Wipro                     | IT Consultant         |  90000.00 | 2018-11-10 |
+|     17 |        17 | HDFC Bank                 | Branch Manager        |  95000.00 | 2019-06-15 |
+|     18 |        18 | Infosys                   | System Architect      | 100000.00 | 2016-09-12 |
+|     19 |        19 | Capgemini                 | Project Lead          |  85000.00 | 2017-01-05 |
+|     20 |        20 | Zomato                    | Marketing Manager     |  70000.00 | 2020-02-20 |
+|   1001 |       300 | TCS                       | Software Engineer     |  60000.00 | 2020-06-15 |
+|   1002 |       301 | Infosys                   | HR Executive          |  50000.00 | 2019-03-10 |
+|   1003 |       302 | Wipro                     | System Analyst        |  55000.00 | 2021-01-20 |
+|   1004 |       303 | Tech Mahindra             | Frontend Developer    |  62000.00 | 2022-04-05 |
+|   1005 |       304 | Capgemini                 | Backend Developer     |  58000.00 | 2018-11-30 |
+|   1006 |       305 | Accenture                 | Project Manager       |  75000.00 | 2017-08-12 |
+|   1007 |       306 | HCL                       | Software Tester       |  52000.00 | 2020-09-01 |
+|   1008 |       307 | Zoho                      | UI/UX Designer        |  53000.00 | 2021-07-25 |
+|   1009 |       308 | IBM                       | DevOps Engineer       |  64000.00 | 2019-05-19 |
+|   1010 |       309 | Cognizant                 | Support Engineer      |  50000.00 | 2022-02-14 |
+|   1011 |       310 | Amazon                    | Cloud Engineer        |  80000.00 | 2021-10-01 |
+|   1012 |       311 | Flipkart                  | Business Analyst      |  70000.00 | 2019-12-10 |
+|   1013 |       312 | Paytm                     | QA Engineer           |  56000.00 | 2020-05-15 |
+|   1014 |       313 | Google                    | Data Scientist        |  90000.00 | 2021-03-28 |
+|   1015 |       314 | Microsoft                 | Software Engineer     |  88000.00 | 2020-08-18 |
+|   1016 |       315 | Reliance Jio              | Network Engineer      |  60000.00 | 2018-06-25 |
+|   1017 |       316 | Byju's                    | Content Developer     |  47000.00 | 2022-01-12 |
+|   1018 |       317 | Zomato                    | Marketing Executive   |  52000.00 | 2019-09-05 |
+|   1019 |       318 | Airtel                    | Sales Executive       |  45000.00 | 2020-04-22 |
+|   1020 |       319 | NPCI                      | Cybersecurity Analyst |  75000.00 | 2021-11-30 |
+|   3005 |      1007 | Infosys                   | Software Engineer     |  75000.00 | 2020-06-15 |
+|   3013 |      1012 | HDFC Bank                 | Marketing Manager     |  60000.00 | 2021-11-20 |
+|   3018 |      1019 | Wipro                     | Tech Support          |  48000.00 | 2023-04-15 |
+|   3021 |      1023 | TCS                       | HR Executive          |  55000.00 | 2021-02-10 |
+|   3027 |      1029 | Capgemini                 | Accountant            |  63000.00 | 2019-05-10 |
+|   3034 |      1031 | Reliance                  | Operations Manager    |  72000.00 | 2020-09-12 |
+|   3039 |      1037 | IBM                       | Marketing Executive   |  61000.00 | 2020-10-10 |
+|   3040 |      1044 | Amazon India              | Software Developer    |  80000.00 | 2022-01-05 |
+|   3050 |      1051 | Zensar                    | System Admin          |  53000.00 | 2022-08-21 |
+|   3056 |      1059 | Flipkart                  | HR Executive          |  54000.00 | 2021-03-30 |
+|   3066 |      1068 | Deloitte                  | Consultant            |  95000.00 | 2017-07-18 |
+|   3083 |      1081 | ICICI Bank                | Business Analyst      |  68000.00 | 2021-09-01 |
+|   3087 |      1098 | Wipro                     | Financial Analyst     |  67000.00 | 2019-08-01 |
+|   3090 |      1091 | Infosys                   | Intern                |  25000.00 | 2024-01-05 |
+|   3095 |      1076 | Cognizant                 | Tech Lead             |  90000.00 | 2018-04-25 |
++--------+-----------+---------------------------+-----------------------+-----------+------------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT p.name, e.company_name, e.position
+    ***-> FROM person p***
+
+    ***-> INNER JOIN emp e ON p.id = e.person\_id;***
+
++-----------------+---------------------------+-----------------------+
+| name            | company_name              | position              |
++-----------------+---------------------------+-----------------------+
+| Aarav Sharma    | Infosys                   | Software Engineer     |
+| Ananya Verma    | Wipro                     | Project Manager       |
+| Vihaan Patel    | Tata Consultancy Services | Data Analyst          |
+| Siya Reddy      | Tech Mahindra             | Business Analyst      |
+| Ishaan Gupta    | Accenture                 | Senior Developer      |
+| Saanvi Rao      | Cognizant                 | HR Manager            |
+| Arjun Mehta     | HCL Technologies          | DevOps Engineer       |
+| Mira Joshi      | IBM                       | Consultant            |
+| Kabir Nair      | Microsoft                 | Product Manager       |
+| Diya Ahuja      | Google                    | UX Designer           |
+| Rohit Khanna    | TCS                       | Senior Consultant     |
+| Nisha Pandey    | Flipkart                  | Data Scientist        |
+| Ayaan Singh     | Cognizant                 | Full Stack Developer  |
+| Riya Rao        | Amazon                    | Operations Manager    |
+| Karan Jain      | Reliance Industries       | Business Analyst      |
+| Priya Ghosh     | Wipro                     | IT Consultant         |
+| Rakesh Sharma   | HDFC Bank                 | Branch Manager        |
+| Sonal Desai     | Infosys                   | System Architect      |
+| Tanya Kapoor    | Capgemini                 | Project Lead          |
+| Rahul Bansal    | Zomato                    | Marketing Manager     |
+| Ravi Kumar      | TCS                       | Software Engineer     |
+| Sita Verma      | Infosys                   | HR Executive          |
+| Amit Sharma     | Wipro                     | System Analyst        |
+| Pooja Singh     | Tech Mahindra             | Frontend Developer    |
+| Manoj Patil     | Capgemini                 | Backend Developer     |
+| Anjali Joshi    | Accenture                 | Project Manager       |
+| Rahul Desai     | HCL                       | Software Tester       |
+| Sneha Mehta     | Zoho                      | UI/UX Designer        |
+| Ramesh Naik     | IBM                       | DevOps Engineer       |
+| Kiran Kulkarni  | Cognizant                 | Support Engineer      |
+| Priya Bhatia    | Amazon                    | Cloud Engineer        |
+| Vikas Thakur    | Flipkart                  | Business Analyst      |
+| Deepa Reddy     | Paytm                     | QA Engineer           |
+| Suresh Yadav    | Google                    | Data Scientist        |
+| Neha Goyal      | Microsoft                 | Software Engineer     |
+| Arun Mishra     | Reliance Jio              | Network Engineer      |
+| Meena Pandey    | Byju's                    | Content Developer     |
+| Rajesh Kapoor   | Zomato                    | Marketing Executive   |
+| Komal Jain      | Airtel                    | Sales Executive       |
+| Nitin Chauhan   | NPCI                      | Cybersecurity Analyst |
+| Amit Sharma     | Infosys                   | Software Engineer     |
+| Priya Joshi     | HDFC Bank                 | Marketing Manager     |
+| Arjun Pandey    | Wipro                     | Tech Support          |
+| Neha Patil      | TCS                       | HR Executive          |
+| Pooja Nair      | Capgemini                 | Accountant            |
+| Rahul Mehta     | Reliance                  | Operations Manager    |
+| Meena Yadav     | IBM                       | Marketing Executive   |
+| Anjali Deshmukh | Amazon India              | Software Developer    |
+| Manoj Chavan    | Zensar                    | System Admin          |
+| Sneha Iyer      | Flipkart                  | HR Executive          |
+| Vikram Singh    | Deloitte                  | Consultant            |
+| Suresh Reddy    | Cognizant                 | Tech Lead             |
+| Kiran Das       | ICICI Bank                | Business Analyst      |
+| Swati Kulkarni  | Infosys                   | Intern                |
+| Ravi Kumar      | Wipro                     | Financial Analyst     |
++-----------------+---------------------------+-----------------------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT p.name, e.company_name, e.position
+    ***-> FROM person p***
+
+    ***-> LEFT JOIN emp e ON p.id = e.person\_id;***
+
++-----------------+---------------------------+-----------------------+
+| name            | company_name              | position              |
++-----------------+---------------------------+-----------------------+
+| Aarav Sharma    | Infosys                   | Software Engineer     |
+| Ananya Verma    | Wipro                     | Project Manager       |
+| Vihaan Patel    | Tata Consultancy Services | Data Analyst          |
+| Siya Reddy      | Tech Mahindra             | Business Analyst      |
+| Ishaan Gupta    | Accenture                 | Senior Developer      |
+| Saanvi Rao      | Cognizant                 | HR Manager            |
+| Arjun Mehta     | HCL Technologies          | DevOps Engineer       |
+| Mira Joshi      | IBM                       | Consultant            |
+| Kabir Nair      | Microsoft                 | Product Manager       |
+| Diya Ahuja      | Google                    | UX Designer           |
+| Rohit Khanna    | TCS                       | Senior Consultant     |
+| Nisha Pandey    | Flipkart                  | Data Scientist        |
+| Ayaan Singh     | Cognizant                 | Full Stack Developer  |
+| Riya Rao        | Amazon                    | Operations Manager    |
+| Karan Jain      | Reliance Industries       | Business Analyst      |
+| Priya Ghosh     | Wipro                     | IT Consultant         |
+| Rakesh Sharma   | HDFC Bank                 | Branch Manager        |
+| Sonal Desai     | Infosys                   | System Architect      |
+| Tanya Kapoor    | Capgemini                 | Project Lead          |
+| Rahul Bansal    | Zomato                    | Marketing Manager     |
+| Ravi Kumar      | TCS                       | Software Engineer     |
+| Sita Verma      | Infosys                   | HR Executive          |
+| Amit Sharma     | Wipro                     | System Analyst        |
+| Pooja Singh     | Tech Mahindra             | Frontend Developer    |
+| Manoj Patil     | Capgemini                 | Backend Developer     |
+| Anjali Joshi    | Accenture                 | Project Manager       |
+| Rahul Desai     | HCL                       | Software Tester       |
+| Sneha Mehta     | Zoho                      | UI/UX Designer        |
+| Ramesh Naik     | IBM                       | DevOps Engineer       |
+| Kiran Kulkarni  | Cognizant                 | Support Engineer      |
+| Priya Bhatia    | Amazon                    | Cloud Engineer        |
+| Vikas Thakur    | Flipkart                  | Business Analyst      |
+| Deepa Reddy     | Paytm                     | QA Engineer           |
+| Suresh Yadav    | Google                    | Data Scientist        |
+| Neha Goyal      | Microsoft                 | Software Engineer     |
+| Arun Mishra     | Reliance Jio              | Network Engineer      |
+| Meena Pandey    | Byju's                    | Content Developer     |
+| Rajesh Kapoor   | Zomato                    | Marketing Executive   |
+| Komal Jain      | Airtel                    | Sales Executive       |
+| Nitin Chauhan   | NPCI                      | Cybersecurity Analyst |
+| Amit Sharma     | Infosys                   | Software Engineer     |
+| Priya Joshi     | HDFC Bank                 | Marketing Manager     |
+| Arjun Pandey    | Wipro                     | Tech Support          |
+| Neha Patil      | TCS                       | HR Executive          |
+| Pooja Nair      | Capgemini                 | Accountant            |
+| Rahul Mehta     | Reliance                  | Operations Manager    |
+| Meena Yadav     | IBM                       | Marketing Executive   |
+| Anjali Deshmukh | Amazon India              | Software Developer    |
+| Manoj Chavan    | Zensar                    | System Admin          |
+| Sneha Iyer      | Flipkart                  | HR Executive          |
+| Vikram Singh    | Deloitte                  | Consultant            |
+| Suresh Reddy    | Cognizant                 | Tech Lead             |
+| Kiran Das       | ICICI Bank                | Business Analyst      |
+| Swati Kulkarni  | Infosys                   | Intern                |
+| Ravi Kumar      | Wipro                     | Financial Analyst     |
++-----------------+---------------------------+-----------------------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT p.name, e.company_name, e.salary
+    ***-> FROM person p***
+
+    ***-> RIGHT JOIN emp e ON p.id = e.person\_id;***
+
++-----------------+---------------------------+-----------+
+| name            | company_name              | salary    |
++-----------------+---------------------------+-----------+
+| Aarav Sharma    | Infosys                   |  60000.00 |
+| Ananya Verma    | Wipro                     |  85000.00 |
+| Vihaan Patel    | Tata Consultancy Services |  55000.00 |
+| Siya Reddy      | Tech Mahindra             |  50000.00 |
+| Ishaan Gupta    | Accenture                 |  70000.00 |
+| Saanvi Rao      | Cognizant                 |  65000.00 |
+| Arjun Mehta     | HCL Technologies          |  75000.00 |
+| Mira Joshi      | IBM                       |  90000.00 |
+| Kabir Nair      | Microsoft                 | 120000.00 |
+| Diya Ahuja      | Google                    |  95000.00 |
+| Rohit Khanna    | TCS                       |  85000.00 |
+| Nisha Pandey    | Flipkart                  |  95000.00 |
+| Ayaan Singh     | Cognizant                 |  75000.00 |
+| Riya Rao        | Amazon                    |  80000.00 |
+| Karan Jain      | Reliance Industries       |  70000.00 |
+| Priya Ghosh     | Wipro                     |  90000.00 |
+| Rakesh Sharma   | HDFC Bank                 |  95000.00 |
+| Sonal Desai     | Infosys                   | 100000.00 |
+| Tanya Kapoor    | Capgemini                 |  85000.00 |
+| Rahul Bansal    | Zomato                    |  70000.00 |
+| Ravi Kumar      | TCS                       |  60000.00 |
+| Sita Verma      | Infosys                   |  50000.00 |
+| Amit Sharma     | Wipro                     |  55000.00 |
+| Pooja Singh     | Tech Mahindra             |  62000.00 |
+| Manoj Patil     | Capgemini                 |  58000.00 |
+| Anjali Joshi    | Accenture                 |  75000.00 |
+| Rahul Desai     | HCL                       |  52000.00 |
+| Sneha Mehta     | Zoho                      |  53000.00 |
+| Ramesh Naik     | IBM                       |  64000.00 |
+| Kiran Kulkarni  | Cognizant                 |  50000.00 |
+| Priya Bhatia    | Amazon                    |  80000.00 |
+| Vikas Thakur    | Flipkart                  |  70000.00 |
+| Deepa Reddy     | Paytm                     |  56000.00 |
+| Suresh Yadav    | Google                    |  90000.00 |
+| Neha Goyal      | Microsoft                 |  88000.00 |
+| Arun Mishra     | Reliance Jio              |  60000.00 |
+| Meena Pandey    | Byju's                    |  47000.00 |
+| Rajesh Kapoor   | Zomato                    |  52000.00 |
+| Komal Jain      | Airtel                    |  45000.00 |
+| Nitin Chauhan   | NPCI                      |  75000.00 |
+| Amit Sharma     | Infosys                   |  75000.00 |
+| Priya Joshi     | HDFC Bank                 |  60000.00 |
+| Arjun Pandey    | Wipro                     |  48000.00 |
+| Neha Patil      | TCS                       |  55000.00 |
+| Pooja Nair      | Capgemini                 |  63000.00 |
+| Rahul Mehta     | Reliance                  |  72000.00 |
+| Meena Yadav     | IBM                       |  61000.00 |
+| Anjali Deshmukh | Amazon India              |  80000.00 |
+| Manoj Chavan    | Zensar                    |  53000.00 |
+| Sneha Iyer      | Flipkart                  |  54000.00 |
+| Vikram Singh    | Deloitte                  |  95000.00 |
+| Kiran Das       | ICICI Bank                |  68000.00 |
+| Ravi Kumar      | Wipro                     |  67000.00 |
+| Swati Kulkarni  | Infosys                   |  25000.00 |
+| Suresh Reddy    | Cognizant                 |  90000.00 |
++-----------------+---------------------------+-----------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT p.name, p.age, e.company_name, e.position
+    ***-> FROM person p***
+
+    ***-> JOIN emp e ON p.id = e.person\_id***
+
+    ***-> WHERE p.age > 30;***
+
++-----------------+------+--------------+-----------------------+
+| name            | age  | company_name | position              |
++-----------------+------+--------------+-----------------------+
+| Kabir Nair      |   31 | Microsoft    | Product Manager       |
+| Rohit Khanna    |   34 | TCS          | Senior Consultant     |
+| Rakesh Sharma   |   33 | HDFC Bank    | Branch Manager        |
+| Tanya Kapoor    |   32 | Capgemini    | Project Lead          |
+| Sita Verma      |   32 | Infosys      | HR Executive          |
+| Manoj Patil     |   40 | Capgemini    | Backend Developer     |
+| Anjali Joshi    |   31 | Accenture    | Project Manager       |
+| Sneha Mehta     |   35 | Zoho         | UI/UX Designer        |
+| Ramesh Naik     |   38 | IBM          | DevOps Engineer       |
+| Deepa Reddy     |   34 | Paytm        | QA Engineer           |
+| Suresh Yadav    |   36 | Google       | Data Scientist        |
+| Arun Mishra     |   33 | Reliance Jio | Network Engineer      |
+| Rajesh Kapoor   |   41 | Zomato       | Marketing Executive   |
+| Nitin Chauhan   |   37 | NPCI         | Cybersecurity Analyst |
+| Arjun Pandey    |   38 | Wipro        | Tech Support          |
+| Rahul Mehta     |   36 | Reliance     | Operations Manager    |
+| Anjali Deshmukh |   31 | Amazon India | Software Developer    |
+| Manoj Chavan    |   40 | Zensar       | System Admin          |
+| Vikram Singh    |   41 | Deloitte     | Consultant            |
+| Suresh Reddy    |   45 | Cognizant    | Tech Lead             |
+| Kiran Das       |   33 | ICICI Bank   | Business Analyst      |
+| Ravi Kumar      |   32 | Wipro        | Financial Analyst     |
++-----------------+------+--------------+-----------------------+
+22 rows in set (0.00 sec)
+
+mysql> SELECT p.name, e.company_name, e.salary
+    ***-> FROM person p***
+
+    ***-> JOIN emp e ON p.id = e.person\_id***
+
+    ***-> WHERE e.salary > 60000;***
+
++-----------------+---------------------+-----------+
+| name            | company_name        | salary    |
++-----------------+---------------------+-----------+
+| Ananya Verma    | Wipro               |  85000.00 |
+| Ishaan Gupta    | Accenture           |  70000.00 |
+| Saanvi Rao      | Cognizant           |  65000.00 |
+| Arjun Mehta     | HCL Technologies    |  75000.00 |
+| Mira Joshi      | IBM                 |  90000.00 |
+| Kabir Nair      | Microsoft           | 120000.00 |
+| Diya Ahuja      | Google              |  95000.00 |
+| Rohit Khanna    | TCS                 |  85000.00 |
+| Nisha Pandey    | Flipkart            |  95000.00 |
+| Ayaan Singh     | Cognizant           |  75000.00 |
+| Riya Rao        | Amazon              |  80000.00 |
+| Karan Jain      | Reliance Industries |  70000.00 |
+| Priya Ghosh     | Wipro               |  90000.00 |
+| Rakesh Sharma   | HDFC Bank           |  95000.00 |
+| Sonal Desai     | Infosys             | 100000.00 |
+| Tanya Kapoor    | Capgemini           |  85000.00 |
+| Rahul Bansal    | Zomato              |  70000.00 |
+| Pooja Singh     | Tech Mahindra       |  62000.00 |
+| Anjali Joshi    | Accenture           |  75000.00 |
+| Ramesh Naik     | IBM                 |  64000.00 |
+| Priya Bhatia    | Amazon              |  80000.00 |
+| Vikas Thakur    | Flipkart            |  70000.00 |
+| Suresh Yadav    | Google              |  90000.00 |
+| Neha Goyal      | Microsoft           |  88000.00 |
+| Nitin Chauhan   | NPCI                |  75000.00 |
+| Amit Sharma     | Infosys             |  75000.00 |
+| Pooja Nair      | Capgemini           |  63000.00 |
+| Rahul Mehta     | Reliance            |  72000.00 |
+| Meena Yadav     | IBM                 |  61000.00 |
+| Anjali Deshmukh | Amazon India        |  80000.00 |
+| Vikram Singh    | Deloitte            |  95000.00 |
+| Kiran Das       | ICICI Bank          |  68000.00 |
+| Ravi Kumar      | Wipro               |  67000.00 |
+| Suresh Reddy    | Cognizant           |  90000.00 |
++-----------------+---------------------+-----------+
+34 rows in set (0.00 sec)
+
+mysql> SELECT p.city, COUNT(e.emp_id) AS employee_count
+    ***-> FROM person p***
+
+    ***-> JOIN emp e ON p.id = e.person\_id***
+
+    ***-> GROUP BY p.city;***
+
++-----------+----------------+
+| city      | employee_count |
++-----------+----------------+
+| Delhi     |              6 |
+| Bangalore |              8 |
+| Chennai   |              5 |
+| Hyderabad |              6 |
+| Mumbai    |              8 |
+| Kolkata   |              4 |
+| Jaipur    |              3 |
+| Pune      |              7 |
+| Noida     |              1 |
+| Vadodara  |              1 |
+| Lucknow   |              3 |
+| Nagpur    |              1 |
+| Patna     |              1 |
+| Ahmedabad |              1 |
++-----------+----------------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT p.name, e.company_name, e.start_date
+    ***-> FROM person p***
+
+    ***-> JOIN emp e ON p.id = e.person\_id***
+
+    ***-> WHERE e.start\_date > '2020-01-01';***
+
++-----------------+---------------------------+------------+
+| name            | company_name              | start_date |
++-----------------+---------------------------+------------+
+| Vihaan Patel    | Tata Consultancy Services | 2020-06-01 |
+| Saanvi Rao      | Cognizant                 | 2021-02-18 |
+| Mira Joshi      | IBM                       | 2020-09-30 |
+| Nisha Pandey    | Flipkart                  | 2020-07-15 |
+| Riya Rao        | Amazon                    | 2021-05-21 |
+| Rahul Bansal    | Zomato                    | 2020-02-20 |
+| Ravi Kumar      | TCS                       | 2020-06-15 |
+| Amit Sharma     | Wipro                     | 2021-01-20 |
+| Pooja Singh     | Tech Mahindra             | 2022-04-05 |
+| Rahul Desai     | HCL                       | 2020-09-01 |
+| Sneha Mehta     | Zoho                      | 2021-07-25 |
+| Kiran Kulkarni  | Cognizant                 | 2022-02-14 |
+| Priya Bhatia    | Amazon                    | 2021-10-01 |
+| Deepa Reddy     | Paytm                     | 2020-05-15 |
+| Suresh Yadav    | Google                    | 2021-03-28 |
+| Neha Goyal      | Microsoft                 | 2020-08-18 |
+| Meena Pandey    | Byju's                    | 2022-01-12 |
+| Komal Jain      | Airtel                    | 2020-04-22 |
+| Nitin Chauhan   | NPCI                      | 2021-11-30 |
+| Amit Sharma     | Infosys                   | 2020-06-15 |
+| Priya Joshi     | HDFC Bank                 | 2021-11-20 |
+| Arjun Pandey    | Wipro                     | 2023-04-15 |
+| Neha Patil      | TCS                       | 2021-02-10 |
+| Rahul Mehta     | Reliance                  | 2020-09-12 |
+| Meena Yadav     | IBM                       | 2020-10-10 |
+| Anjali Deshmukh | Amazon India              | 2022-01-05 |
+| Manoj Chavan    | Zensar                    | 2022-08-21 |
+| Sneha Iyer      | Flipkart                  | 2021-03-30 |
+| Kiran Das       | ICICI Bank                | 2021-09-01 |
+| Swati Kulkarni  | Infosys                   | 2024-01-05 |
++-----------------+---------------------------+------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT p.name, e.emp_id
+    ***-> FROM person p***
+
+    ***-> LEFT JOIN emp e ON p.id = e.person\_id;***
+
++-----------------+--------+
+| name            | emp_id |
++-----------------+--------+
+| Aarav Sharma    |      1 |
+| Ananya Verma    |      2 |
+| Vihaan Patel    |      3 |
+| Siya Reddy      |      4 |
+| Ishaan Gupta    |      5 |
+| Saanvi Rao      |      6 |
+| Arjun Mehta     |      7 |
+| Mira Joshi      |      8 |
+| Kabir Nair      |      9 |
+| Diya Ahuja      |     10 |
+| Rohit Khanna    |     11 |
+| Nisha Pandey    |     12 |
+| Ayaan Singh     |     13 |
+| Riya Rao        |     14 |
+| Karan Jain      |     15 |
+| Priya Ghosh     |     16 |
+| Rakesh Sharma   |     17 |
+| Sonal Desai     |     18 |
+| Tanya Kapoor    |     19 |
+| Rahul Bansal    |     20 |
+| Ravi Kumar      |   1001 |
+| Sita Verma      |   1002 |
+| Amit Sharma     |   1003 |
+| Pooja Singh     |   1004 |
+| Manoj Patil     |   1005 |
+| Anjali Joshi    |   1006 |
+| Rahul Desai     |   1007 |
+| Sneha Mehta     |   1008 |
+| Ramesh Naik     |   1009 |
+| Kiran Kulkarni  |   1010 |
+| Priya Bhatia    |   1011 |
+| Vikas Thakur    |   1012 |
+| Deepa Reddy     |   1013 |
+| Suresh Yadav    |   1014 |
+| Neha Goyal      |   1015 |
+| Arun Mishra     |   1016 |
+| Meena Pandey    |   1017 |
+| Rajesh Kapoor   |   1018 |
+| Komal Jain      |   1019 |
+| Nitin Chauhan   |   1020 |
+| Amit Sharma     |   3005 |
+| Priya Joshi     |   3013 |
+| Arjun Pandey    |   3018 |
+| Neha Patil      |   3021 |
+| Pooja Nair      |   3027 |
+| Rahul Mehta     |   3034 |
+| Meena Yadav     |   3039 |
+| Anjali Deshmukh |   3040 |
+| Manoj Chavan    |   3050 |
+| Sneha Iyer      |   3056 |
+| Vikram Singh    |   3066 |
+| Suresh Reddy    |   3095 |
+| Kiran Das       |   3083 |
+| Swati Kulkarni  |   3090 |
+| Ravi Kumar      |   3087 |
++-----------------+--------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT p.city, AVG(e.salary) AS avg_salary
+    ***-> FROM person p***
+
+    ***-> JOIN emp e ON p.id = e.person\_id***
+
+    ***-> GROUP BY p.city;***
+
++-----------+--------------+
+| city      | avg_salary   |
++-----------+--------------+
+| Delhi     | 72500.000000 |
+| Bangalore | 75125.000000 |
+| Chennai   | 67800.000000 |
+| Hyderabad | 74000.000000 |
+| Mumbai    | 74625.000000 |
+| Kolkata   | 69500.000000 |
+| Jaipur    | 81666.666667 |
+| Pune      | 61571.428571 |
+| Noida     | 62000.000000 |
+| Vadodara  | 53000.000000 |
+| Lucknow   | 56000.000000 |
+| Nagpur    | 45000.000000 |
+| Patna     | 48000.000000 |
+| Ahmedabad | 72000.000000 |
++-----------+--------------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT p.name
+    ***-> FROM person p***
+
+    ***-> LEFT JOIN emp e ON p.id = e.person\_id***
+
+    ***-> WHERE e.emp\_id IS NULL;***
+
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM person
+    ***-> WHERE name REGEXP '^R';***
+
++------+---------------+-------------------+-----------+------------+------+
+| id   | name          | address           | city      | phoneno    | age  |
++------+---------------+-------------------+-----------+------------+------+
+|   11 | Rohit Khanna  | 678 MG Road       | Delhi     | 9876543220 |   34 |
+|   14 | Riya Rao      | 789 Jubilee Hills | Hyderabad | 9876543223 |   22 |
+|   17 | Rakesh Sharma | 987 Ajmer Road    | Jaipur    | 9876543226 |   33 |
+|   20 | Rahul Bansal  | 890 Church Street | Bangalore | 9876543229 |   24 |
+|  300 | Ravi Kumar    | MG Road           | Mumbai    | 9876543210 |   28 |
+|  306 | Rahul Desai   | Ashok Nagar       | Chennai   | 9956784321 |   27 |
+|  308 | Ramesh Naik   | Rajajinagar       | Bangalore | 9908765432 |   38 |
+|  317 | Rajesh Kapoor | Churchgate        | Mumbai    | 9844411223 |   41 |
+| 1031 | Rahul Mehta   | 3 Navrangpura     | Ahmedabad | 9876501234 |   36 |
+| 1098 | Ravi Kumar    | 88 Anna Nagar     | Chennai   | 9876543120 |   32 |
++------+---------------+-------------------+-----------+------------+------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM person
+    ***-> WHERE name REGEXP 'a$';***
+
++------+---------------+--------------------+-----------+------------+------+
+| id   | name          | address            | city      | phoneno    | age  |
++------+---------------+--------------------+-----------+------------+------+
+|    1 | Aarav Sharma  | 123 MG Road        | Delhi     | 9876543210 |   25 |
+|    2 | Ananya Verma  | 456 Brigade Road   | Bangalore | 9876543211 |   30 |
+|    5 | Ishaan Gupta  | 654 Marine Drive   | Mumbai    | 9876543214 |   27 |
+|    7 | Arjun Mehta   | 234 JLN Marg       | Jaipur    | 9876543216 |   29 |
+|   10 | Diya Ahuja    | 345 Residency Road | Bangalore | 9876543219 |   23 |
+|   11 | Rohit Khanna  | 678 MG Road        | Delhi     | 9876543220 |   34 |
+|   17 | Rakesh Sharma | 987 Ajmer Road     | Jaipur    | 9876543226 |   33 |
+|  301 | Sita Verma    | Ring Road          | Delhi     | 9812345678 |   32 |
+|  302 | Amit Sharma   | Park Street        | Kolkata   | 9823456781 |   25 |
+|  307 | Sneha Mehta   | Alkapuri           | Vadodara  | 9632147850 |   35 |
+|  310 | Priya Bhatia  | Andheri East       | Mumbai    | 9877891234 |   30 |
+|  315 | Arun Mishra   | Gomti Nagar        | Lucknow   | 9888888888 |   33 |
+| 1007 | Amit Sharma   | 12 MG Road         | Delhi     | 9876543210 |   29 |
+| 1031 | Rahul Mehta   | 3 Navrangpura      | Ahmedabad | 9876501234 |   36 |
++------+---------------+--------------------+-----------+------------+------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT * FROM person
+    ***-> WHERE name REGEXP 'ee';***
+
++------+--------------+---------------+-----------+------------+------+
+| id   | name         | address       | city      | phoneno    | age  |
++------+--------------+---------------+-----------+------------+------+
+|  312 | Deepa Reddy  | Charminar     | Hyderabad | 9848001122 |   34 |
+|  316 | Meena Pandey | Hazratganj    | Lucknow   | 9911223344 |   29 |
+| 1037 | Meena Yadav  | 30 Hazratganj | Lucknow   | 9811122233 |   30 |
++------+--------------+---------------+-----------+------------+------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM person
+    ***-> WHERE name REGEXP '^\[A-Za-z ]+$';***
+
++------+-----------------+----------------------+-----------+------------+------+
+| id   | name            | address              | city      | phoneno    | age  |
++------+-----------------+----------------------+-----------+------------+------+
+|    1 | Aarav Sharma    | 123 MG Road          | Delhi     | 9876543210 |   25 |
+|    2 | Ananya Verma    | 456 Brigade Road     | Bangalore | 9876543211 |   30 |
+|    3 | Vihaan Patel    | 789 Anna Salai       | Chennai   | 9876543212 |   28 |
+|    4 | Siya Reddy      | 321 Banjara Hills    | Hyderabad | 9876543213 |   22 |
+|    5 | Ishaan Gupta    | 654 Marine Drive     | Mumbai    | 9876543214 |   27 |
+|    6 | Saanvi Rao      | 987 Park Street      | Kolkata   | 9876543215 |   24 |
+|    7 | Arjun Mehta     | 234 JLN Marg         | Jaipur    | 9876543216 |   29 |
+|    8 | Mira Joshi      | 567 Law College Road | Pune      | 9876543217 |   26 |
+|    9 | Kabir Nair      | 890 Carter Road      | Mumbai    | 9876543218 |   31 |
+|   10 | Diya Ahuja      | 345 Residency Road   | Bangalore | 9876543219 |   23 |
+|   11 | Rohit Khanna    | 678 MG Road          | Delhi     | 9876543220 |   34 |
+|   12 | Nisha Pandey    | 123 ITPL Road        | Bangalore | 9876543221 |   29 |
+|   13 | Ayaan Singh     | 456 Nungambakkam     | Chennai   | 9876543222 |   27 |
+|   14 | Riya Rao        | 789 Jubilee Hills    | Hyderabad | 9876543223 |   22 |
+|   15 | Karan Jain      | 321 Nariman Point    | Mumbai    | 9876543224 |   28 |
+|   16 | Priya Ghosh     | 654 Elgin Road       | Kolkata   | 9876543225 |   26 |
+|   17 | Rakesh Sharma   | 987 Ajmer Road       | Jaipur    | 9876543226 |   33 |
+|   18 | Sonal Desai     | 234 FC Road          | Pune      | 9876543227 |   30 |
+|   19 | Tanya Kapoor    | 567 Juhu Beach       | Mumbai    | 9876543228 |   32 |
+|   20 | Rahul Bansal    | 890 Church Street    | Bangalore | 9876543229 |   24 |
+|  300 | Ravi Kumar      | MG Road              | Mumbai    | 9876543210 |   28 |
+|  301 | Sita Verma      | Ring Road            | Delhi     | 9812345678 |   32 |
+|  302 | Amit Sharma     | Park Street          | Kolkata   | 9823456781 |   25 |
+|  303 | Pooja Singh     | Sector 15            | Noida     | 9876501234 |   29 |
+|  304 | Manoj Patil     | FC Road              | Pune      | 9765432109 |   40 |
+|  305 | Anjali Joshi    | JP Nagar             | Bangalore | 9845123456 |   31 |
+|  306 | Rahul Desai     | Ashok Nagar          | Chennai   | 9956784321 |   27 |
+|  307 | Sneha Mehta     | Alkapuri             | Vadodara  | 9632147850 |   35 |
+|  308 | Ramesh Naik     | Rajajinagar          | Bangalore | 9908765432 |   38 |
+|  309 | Kiran Kulkarni  | Swargate             | Pune      | 9812233445 |   22 |
+|  310 | Priya Bhatia    | Andheri East         | Mumbai    | 9877891234 |   30 |
+|  311 | Vikas Thakur    | Saket                | Delhi     | 9753102468 |   26 |
+|  312 | Deepa Reddy     | Charminar            | Hyderabad | 9848001122 |   34 |
+|  313 | Suresh Yadav    | Red Hills            | Chennai   | 9823401122 |   36 |
+|  314 | Neha Goyal      | Banjara Hills        | Hyderabad | 9856754321 |   24 |
+|  315 | Arun Mishra     | Gomti Nagar          | Lucknow   | 9888888888 |   33 |
+|  316 | Meena Pandey    | Hazratganj           | Lucknow   | 9911223344 |   29 |
+|  317 | Rajesh Kapoor   | Churchgate           | Mumbai    | 9844411223 |   41 |
+|  318 | Komal Jain      | Civil Lines          | Nagpur    | 9723451234 |   23 |
+|  319 | Nitin Chauhan   | Tilak Nagar          | Jaipur    | 9898761234 |   37 |
+| 1007 | Amit Sharma     | 12 MG Road           | Delhi     | 9876543210 |   29 |
+| 1012 | Priya Joshi     | 23 Law College Road  | Mumbai    | 9908765432 |   27 |
+| 1019 | Arjun Pandey    | 21 Fraser Road       | Patna     | 9922334455 |   38 |
+| 1023 | Neha Patil      | 45 FC Road           | Pune      | 9823456710 |   24 |
+| 1029 | Pooja Nair      | 18 MG Road           | Bangalore | 9876545678 |   26 |
+| 1031 | Rahul Mehta     | 3 Navrangpura        | Ahmedabad | 9876501234 |   36 |
+| 1037 | Meena Yadav     | 30 Hazratganj        | Lucknow   | 9811122233 |   30 |
+| 1044 | Anjali Deshmukh | 7 Banjara Hills      | Hyderabad | 9845123456 |   31 |
+| 1051 | Manoj Chavan    | 88 Bajirao Road      | Pune      | 9898989898 |   40 |
+| 1059 | Sneha Iyer      | 5 Indira Nagar       | Bangalore | 9823450987 |   28 |
+| 1068 | Vikram Singh    | 55 Connaught Place   | Delhi     | 9834567890 |   41 |
+| 1076 | Suresh Reddy    | 17 Jubilee Hills     | Hyderabad | 9812345670 |   45 |
+| 1081 | Kiran Das       | 9 Salt Lake          | Kolkata   | 9901234567 |   33 |
+| 1091 | Swati Kulkarni  | 6 Karve Road         | Pune      | 9844001122 |   25 |
+| 1098 | Ravi Kumar      | 88 Anna Nagar        | Chennai   | 9876543120 |   32 |
++------+-----------------+----------------------+-----------+------------+------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT * FROM person
+    ***-> WHERE name REGEXP '^\[A-Za-z ]+$';***
+
++------+-----------------+----------------------+-----------+------------+------+
+| id   | name            | address              | city      | phoneno    | age  |
++------+-----------------+----------------------+-----------+------------+------+
+|    1 | Aarav Sharma    | 123 MG Road          | Delhi     | 9876543210 |   25 |
+|    2 | Ananya Verma    | 456 Brigade Road     | Bangalore | 9876543211 |   30 |
+|    3 | Vihaan Patel    | 789 Anna Salai       | Chennai   | 9876543212 |   28 |
+|    4 | Siya Reddy      | 321 Banjara Hills    | Hyderabad | 9876543213 |   22 |
+|    5 | Ishaan Gupta    | 654 Marine Drive     | Mumbai    | 9876543214 |   27 |
+|    6 | Saanvi Rao      | 987 Park Street      | Kolkata   | 9876543215 |   24 |
+|    7 | Arjun Mehta     | 234 JLN Marg         | Jaipur    | 9876543216 |   29 |
+|    8 | Mira Joshi      | 567 Law College Road | Pune      | 9876543217 |   26 |
+|    9 | Kabir Nair      | 890 Carter Road      | Mumbai    | 9876543218 |   31 |
+|   10 | Diya Ahuja      | 345 Residency Road   | Bangalore | 9876543219 |   23 |
+|   11 | Rohit Khanna    | 678 MG Road          | Delhi     | 9876543220 |   34 |
+|   12 | Nisha Pandey    | 123 ITPL Road        | Bangalore | 9876543221 |   29 |
+|   13 | Ayaan Singh     | 456 Nungambakkam     | Chennai   | 9876543222 |   27 |
+|   14 | Riya Rao        | 789 Jubilee Hills    | Hyderabad | 9876543223 |   22 |
+|   15 | Karan Jain      | 321 Nariman Point    | Mumbai    | 9876543224 |   28 |
+|   16 | Priya Ghosh     | 654 Elgin Road       | Kolkata   | 9876543225 |   26 |
+|   17 | Rakesh Sharma   | 987 Ajmer Road       | Jaipur    | 9876543226 |   33 |
+|   18 | Sonal Desai     | 234 FC Road          | Pune      | 9876543227 |   30 |
+|   19 | Tanya Kapoor    | 567 Juhu Beach       | Mumbai    | 9876543228 |   32 |
+|   20 | Rahul Bansal    | 890 Church Street    | Bangalore | 9876543229 |   24 |
+|  300 | Ravi Kumar      | MG Road              | Mumbai    | 9876543210 |   28 |
+|  301 | Sita Verma      | Ring Road            | Delhi     | 9812345678 |   32 |
+|  302 | Amit Sharma     | Park Street          | Kolkata   | 9823456781 |   25 |
+|  303 | Pooja Singh     | Sector 15            | Noida     | 9876501234 |   29 |
+|  304 | Manoj Patil     | FC Road              | Pune      | 9765432109 |   40 |
+|  305 | Anjali Joshi    | JP Nagar             | Bangalore | 9845123456 |   31 |
+|  306 | Rahul Desai     | Ashok Nagar          | Chennai   | 9956784321 |   27 |
+|  307 | Sneha Mehta     | Alkapuri             | Vadodara  | 9632147850 |   35 |
+|  308 | Ramesh Naik     | Rajajinagar          | Bangalore | 9908765432 |   38 |
+|  309 | Kiran Kulkarni  | Swargate             | Pune      | 9812233445 |   22 |
+|  310 | Priya Bhatia    | Andheri East         | Mumbai    | 9877891234 |   30 |
+|  311 | Vikas Thakur    | Saket                | Delhi     | 9753102468 |   26 |
+|  312 | Deepa Reddy     | Charminar            | Hyderabad | 9848001122 |   34 |
+|  313 | Suresh Yadav    | Red Hills            | Chennai   | 9823401122 |   36 |
+|  314 | Neha Goyal      | Banjara Hills        | Hyderabad | 9856754321 |   24 |
+|  315 | Arun Mishra     | Gomti Nagar          | Lucknow   | 9888888888 |   33 |
+|  316 | Meena Pandey    | Hazratganj           | Lucknow   | 9911223344 |   29 |
+|  317 | Rajesh Kapoor   | Churchgate           | Mumbai    | 9844411223 |   41 |
+|  318 | Komal Jain      | Civil Lines          | Nagpur    | 9723451234 |   23 |
+|  319 | Nitin Chauhan   | Tilak Nagar          | Jaipur    | 9898761234 |   37 |
+| 1007 | Amit Sharma     | 12 MG Road           | Delhi     | 9876543210 |   29 |
+| 1012 | Priya Joshi     | 23 Law College Road  | Mumbai    | 9908765432 |   27 |
+| 1019 | Arjun Pandey    | 21 Fraser Road       | Patna     | 9922334455 |   38 |
+| 1023 | Neha Patil      | 45 FC Road           | Pune      | 9823456710 |   24 |
+| 1029 | Pooja Nair      | 18 MG Road           | Bangalore | 9876545678 |   26 |
+| 1031 | Rahul Mehta     | 3 Navrangpura        | Ahmedabad | 9876501234 |   36 |
+| 1037 | Meena Yadav     | 30 Hazratganj        | Lucknow   | 9811122233 |   30 |
+| 1044 | Anjali Deshmukh | 7 Banjara Hills      | Hyderabad | 9845123456 |   31 |
+| 1051 | Manoj Chavan    | 88 Bajirao Road      | Pune      | 9898989898 |   40 |
+| 1059 | Sneha Iyer      | 5 Indira Nagar       | Bangalore | 9823450987 |   28 |
+| 1068 | Vikram Singh    | 55 Connaught Place   | Delhi     | 9834567890 |   41 |
+| 1076 | Suresh Reddy    | 17 Jubilee Hills     | Hyderabad | 9812345670 |   45 |
+| 1081 | Kiran Das       | 9 Salt Lake          | Kolkata   | 9901234567 |   33 |
+| 1091 | Swati Kulkarni  | 6 Karve Road         | Pune      | 9844001122 |   25 |
+| 1098 | Ravi Kumar      | 88 Anna Nagar        | Chennai   | 9876543120 |   32 |
++------+-----------------+----------------------+-----------+------------+------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT * FROM person
+    ***-> WHERE phoneno REGEXP '^98';***
+
++------+-----------------+----------------------+-----------+------------+------+
+| id   | name            | address              | city      | phoneno    | age  |
++------+-----------------+----------------------+-----------+------------+------+
+|    1 | Aarav Sharma    | 123 MG Road          | Delhi     | 9876543210 |   25 |
+|    2 | Ananya Verma    | 456 Brigade Road     | Bangalore | 9876543211 |   30 |
+|    3 | Vihaan Patel    | 789 Anna Salai       | Chennai   | 9876543212 |   28 |
+|    4 | Siya Reddy      | 321 Banjara Hills    | Hyderabad | 9876543213 |   22 |
+|    5 | Ishaan Gupta    | 654 Marine Drive     | Mumbai    | 9876543214 |   27 |
+|    6 | Saanvi Rao      | 987 Park Street      | Kolkata   | 9876543215 |   24 |
+|    7 | Arjun Mehta     | 234 JLN Marg         | Jaipur    | 9876543216 |   29 |
+|    8 | Mira Joshi      | 567 Law College Road | Pune      | 9876543217 |   26 |
+|    9 | Kabir Nair      | 890 Carter Road      | Mumbai    | 9876543218 |   31 |
+|   10 | Diya Ahuja      | 345 Residency Road   | Bangalore | 9876543219 |   23 |
+|   11 | Rohit Khanna    | 678 MG Road          | Delhi     | 9876543220 |   34 |
+|   12 | Nisha Pandey    | 123 ITPL Road        | Bangalore | 9876543221 |   29 |
+|   13 | Ayaan Singh     | 456 Nungambakkam     | Chennai   | 9876543222 |   27 |
+|   14 | Riya Rao        | 789 Jubilee Hills    | Hyderabad | 9876543223 |   22 |
+|   15 | Karan Jain      | 321 Nariman Point    | Mumbai    | 9876543224 |   28 |
+|   16 | Priya Ghosh     | 654 Elgin Road       | Kolkata   | 9876543225 |   26 |
+|   17 | Rakesh Sharma   | 987 Ajmer Road       | Jaipur    | 9876543226 |   33 |
+|   18 | Sonal Desai     | 234 FC Road          | Pune      | 9876543227 |   30 |
+|   19 | Tanya Kapoor    | 567 Juhu Beach       | Mumbai    | 9876543228 |   32 |
+|   20 | Rahul Bansal    | 890 Church Street    | Bangalore | 9876543229 |   24 |
+|  300 | Ravi Kumar      | MG Road              | Mumbai    | 9876543210 |   28 |
+|  301 | Sita Verma      | Ring Road            | Delhi     | 9812345678 |   32 |
+|  302 | Amit Sharma     | Park Street          | Kolkata   | 9823456781 |   25 |
+|  303 | Pooja Singh     | Sector 15            | Noida     | 9876501234 |   29 |
+|  305 | Anjali Joshi    | JP Nagar             | Bangalore | 9845123456 |   31 |
+|  309 | Kiran Kulkarni  | Swargate             | Pune      | 9812233445 |   22 |
+|  310 | Priya Bhatia    | Andheri East         | Mumbai    | 9877891234 |   30 |
+|  312 | Deepa Reddy     | Charminar            | Hyderabad | 9848001122 |   34 |
+|  313 | Suresh Yadav    | Red Hills            | Chennai   | 9823401122 |   36 |
+|  314 | Neha Goyal      | Banjara Hills        | Hyderabad | 9856754321 |   24 |
+|  315 | Arun Mishra     | Gomti Nagar          | Lucknow   | 9888888888 |   33 |
+|  317 | Rajesh Kapoor   | Churchgate           | Mumbai    | 9844411223 |   41 |
+|  319 | Nitin Chauhan   | Tilak Nagar          | Jaipur    | 9898761234 |   37 |
+| 1007 | Amit Sharma     | 12 MG Road           | Delhi     | 9876543210 |   29 |
+| 1023 | Neha Patil      | 45 FC Road           | Pune      | 9823456710 |   24 |
+| 1029 | Pooja Nair      | 18 MG Road           | Bangalore | 9876545678 |   26 |
+| 1031 | Rahul Mehta     | 3 Navrangpura        | Ahmedabad | 9876501234 |   36 |
+| 1037 | Meena Yadav     | 30 Hazratganj        | Lucknow   | 9811122233 |   30 |
+| 1044 | Anjali Deshmukh | 7 Banjara Hills      | Hyderabad | 9845123456 |   31 |
+| 1051 | Manoj Chavan    | 88 Bajirao Road      | Pune      | 9898989898 |   40 |
+| 1059 | Sneha Iyer      | 5 Indira Nagar       | Bangalore | 9823450987 |   28 |
+| 1068 | Vikram Singh    | 55 Connaught Place   | Delhi     | 9834567890 |   41 |
+| 1076 | Suresh Reddy    | 17 Jubilee Hills     | Hyderabad | 9812345670 |   45 |
+| 1091 | Swati Kulkarni  | 6 Karve Road         | Pune      | 9844001122 |   25 |
+| 1098 | Ravi Kumar      | 88 Anna Nagar        | Chennai   | 9876543120 |   32 |
++------+-----------------+----------------------+-----------+------------+------+
+45 rows in set (0.00 sec)
+
+mysql> SELECT * FROM person
+    ***-> WHERE city REGEXP '(?i)mumbai|delhi|pune';***
+
++------+----------------+----------------------+--------+------------+------+
+| id   | name           | address              | city   | phoneno    | age  |
++------+----------------+----------------------+--------+------------+------+
+|    1 | Aarav Sharma   | 123 MG Road          | Delhi  | 9876543210 |   25 |
+|    5 | Ishaan Gupta   | 654 Marine Drive     | Mumbai | 9876543214 |   27 |
+|    8 | Mira Joshi     | 567 Law College Road | Pune   | 9876543217 |   26 |
+|    9 | Kabir Nair     | 890 Carter Road      | Mumbai | 9876543218 |   31 |
+|   11 | Rohit Khanna   | 678 MG Road          | Delhi  | 9876543220 |   34 |
+|   15 | Karan Jain     | 321 Nariman Point    | Mumbai | 9876543224 |   28 |
+|   18 | Sonal Desai    | 234 FC Road          | Pune   | 9876543227 |   30 |
+|   19 | Tanya Kapoor   | 567 Juhu Beach       | Mumbai | 9876543228 |   32 |
+|  300 | Ravi Kumar     | MG Road              | Mumbai | 9876543210 |   28 |
+|  301 | Sita Verma     | Ring Road            | Delhi  | 9812345678 |   32 |
+|  304 | Manoj Patil    | FC Road              | Pune   | 9765432109 |   40 |
+|  309 | Kiran Kulkarni | Swargate             | Pune   | 9812233445 |   22 |
+|  310 | Priya Bhatia   | Andheri East         | Mumbai | 9877891234 |   30 |
+|  311 | Vikas Thakur   | Saket                | Delhi  | 9753102468 |   26 |
+|  317 | Rajesh Kapoor  | Churchgate           | Mumbai | 9844411223 |   41 |
+| 1007 | Amit Sharma    | 12 MG Road           | Delhi  | 9876543210 |   29 |
+| 1012 | Priya Joshi    | 23 Law College Road  | Mumbai | 9908765432 |   27 |
+| 1023 | Neha Patil     | 45 FC Road           | Pune   | 9823456710 |   24 |
+| 1051 | Manoj Chavan   | 88 Bajirao Road      | Pune   | 9898989898 |   40 |
+| 1068 | Vikram Singh   | 55 Connaught Place   | Delhi  | 9834567890 |   41 |
+| 1091 | Swati Kulkarni | 6 Karve Road         | Pune   | 9844001122 |   25 |
++------+----------------+----------------------+--------+------------+------+
+21 rows in set (0.00 sec)
+
+mysql> SELECT * FROM emp
+    ***-> WHERE position REGEXP '(?i)engineer';***
+
++--------+-----------+------------------+-------------------+----------+------------+
+| emp_id | person_id | company_name     | position          | salary   | start_date |
++--------+-----------+------------------+-------------------+----------+------------+
+|      1 |         1 | Infosys          | Software Engineer | 60000.00 | 2019-01-15 |
+|      7 |         7 | HCL Technologies | DevOps Engineer   | 75000.00 | 2018-08-25 |
+|   1001 |       300 | TCS              | Software Engineer | 60000.00 | 2020-06-15 |
+|   1009 |       308 | IBM              | DevOps Engineer   | 64000.00 | 2019-05-19 |
+|   1010 |       309 | Cognizant        | Support Engineer  | 50000.00 | 2022-02-14 |
+|   1011 |       310 | Amazon           | Cloud Engineer    | 80000.00 | 2021-10-01 |
+|   1013 |       312 | Paytm            | QA Engineer       | 56000.00 | 2020-05-15 |
+|   1015 |       314 | Microsoft        | Software Engineer | 88000.00 | 2020-08-18 |
+|   1016 |       315 | Reliance Jio     | Network Engineer  | 60000.00 | 2018-06-25 |
+|   3005 |      1007 | Infosys          | Software Engineer | 75000.00 | 2020-06-15 |
++--------+-----------+------------------+-------------------+----------+------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM emp
+    ***-> WHERE company\_name REGEXP '^\[AC]';***
+
++--------+-----------+--------------+----------------------+----------+------------+
+| emp_id | person_id | company_name | position             | salary   | start_date |
++--------+-----------+--------------+----------------------+----------+------------+
+|      5 |         5 | Accenture    | Senior Developer     | 70000.00 | 2017-11-05 |
+|      6 |         6 | Cognizant    | HR Manager           | 65000.00 | 2021-02-18 |
+|     13 |        13 | Cognizant    | Full Stack Developer | 75000.00 | 2019-04-18 |
+|     14 |        14 | Amazon       | Operations Manager   | 80000.00 | 2021-05-21 |
+|     19 |        19 | Capgemini    | Project Lead         | 85000.00 | 2017-01-05 |
+|   1005 |       304 | Capgemini    | Backend Developer    | 58000.00 | 2018-11-30 |
+|   1006 |       305 | Accenture    | Project Manager      | 75000.00 | 2017-08-12 |
+|   1010 |       309 | Cognizant    | Support Engineer     | 50000.00 | 2022-02-14 |
+|   1011 |       310 | Amazon       | Cloud Engineer       | 80000.00 | 2021-10-01 |
+|   1019 |       318 | Airtel       | Sales Executive      | 45000.00 | 2020-04-22 |
+|   3027 |      1029 | Capgemini    | Accountant           | 63000.00 | 2019-05-10 |
+|   3040 |      1044 | Amazon India | Software Developer   | 80000.00 | 2022-01-05 |
+|   3095 |      1076 | Cognizant    | Tech Lead            | 90000.00 | 2018-04-25 |
++--------+-----------+--------------+----------------------+----------+------------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT * FROM person
+    ***-> WHERE name REGEXP '^\[A-Za-z]+ \[A-Za-z]+$';***
+
++------+-----------------+----------------------+-----------+------------+------+
+| id   | name            | address              | city      | phoneno    | age  |
++------+-----------------+----------------------+-----------+------------+------+
+|    1 | Aarav Sharma    | 123 MG Road          | Delhi     | 9876543210 |   25 |
+|    2 | Ananya Verma    | 456 Brigade Road     | Bangalore | 9876543211 |   30 |
+|    3 | Vihaan Patel    | 789 Anna Salai       | Chennai   | 9876543212 |   28 |
+|    4 | Siya Reddy      | 321 Banjara Hills    | Hyderabad | 9876543213 |   22 |
+|    5 | Ishaan Gupta    | 654 Marine Drive     | Mumbai    | 9876543214 |   27 |
+|    6 | Saanvi Rao      | 987 Park Street      | Kolkata   | 9876543215 |   24 |
+|    7 | Arjun Mehta     | 234 JLN Marg         | Jaipur    | 9876543216 |   29 |
+|    8 | Mira Joshi      | 567 Law College Road | Pune      | 9876543217 |   26 |
+|    9 | Kabir Nair      | 890 Carter Road      | Mumbai    | 9876543218 |   31 |
+|   10 | Diya Ahuja      | 345 Residency Road   | Bangalore | 9876543219 |   23 |
+|   11 | Rohit Khanna    | 678 MG Road          | Delhi     | 9876543220 |   34 |
+|   12 | Nisha Pandey    | 123 ITPL Road        | Bangalore | 9876543221 |   29 |
+|   13 | Ayaan Singh     | 456 Nungambakkam     | Chennai   | 9876543222 |   27 |
+|   14 | Riya Rao        | 789 Jubilee Hills    | Hyderabad | 9876543223 |   22 |
+|   15 | Karan Jain      | 321 Nariman Point    | Mumbai    | 9876543224 |   28 |
+|   16 | Priya Ghosh     | 654 Elgin Road       | Kolkata   | 9876543225 |   26 |
+|   17 | Rakesh Sharma   | 987 Ajmer Road       | Jaipur    | 9876543226 |   33 |
+|   18 | Sonal Desai     | 234 FC Road          | Pune      | 9876543227 |   30 |
+|   19 | Tanya Kapoor    | 567 Juhu Beach       | Mumbai    | 9876543228 |   32 |
+|   20 | Rahul Bansal    | 890 Church Street    | Bangalore | 9876543229 |   24 |
+|  300 | Ravi Kumar      | MG Road              | Mumbai    | 9876543210 |   28 |
+|  301 | Sita Verma      | Ring Road            | Delhi     | 9812345678 |   32 |
+|  302 | Amit Sharma     | Park Street          | Kolkata   | 9823456781 |   25 |
+|  303 | Pooja Singh     | Sector 15            | Noida     | 9876501234 |   29 |
+|  304 | Manoj Patil     | FC Road              | Pune      | 9765432109 |   40 |
+|  305 | Anjali Joshi    | JP Nagar             | Bangalore | 9845123456 |   31 |
+|  306 | Rahul Desai     | Ashok Nagar          | Chennai   | 9956784321 |   27 |
+|  307 | Sneha Mehta     | Alkapuri             | Vadodara  | 9632147850 |   35 |
+|  308 | Ramesh Naik     | Rajajinagar          | Bangalore | 9908765432 |   38 |
+|  309 | Kiran Kulkarni  | Swargate             | Pune      | 9812233445 |   22 |
+|  310 | Priya Bhatia    | Andheri East         | Mumbai    | 9877891234 |   30 |
+|  311 | Vikas Thakur    | Saket                | Delhi     | 9753102468 |   26 |
+|  312 | Deepa Reddy     | Charminar            | Hyderabad | 9848001122 |   34 |
+|  313 | Suresh Yadav    | Red Hills            | Chennai   | 9823401122 |   36 |
+|  314 | Neha Goyal      | Banjara Hills        | Hyderabad | 9856754321 |   24 |
+|  315 | Arun Mishra     | Gomti Nagar          | Lucknow   | 9888888888 |   33 |
+|  316 | Meena Pandey    | Hazratganj           | Lucknow   | 9911223344 |   29 |
+|  317 | Rajesh Kapoor   | Churchgate           | Mumbai    | 9844411223 |   41 |
+|  318 | Komal Jain      | Civil Lines          | Nagpur    | 9723451234 |   23 |
+|  319 | Nitin Chauhan   | Tilak Nagar          | Jaipur    | 9898761234 |   37 |
+| 1007 | Amit Sharma     | 12 MG Road           | Delhi     | 9876543210 |   29 |
+| 1012 | Priya Joshi     | 23 Law College Road  | Mumbai    | 9908765432 |   27 |
+| 1019 | Arjun Pandey    | 21 Fraser Road       | Patna     | 9922334455 |   38 |
+| 1023 | Neha Patil      | 45 FC Road           | Pune      | 9823456710 |   24 |
+| 1029 | Pooja Nair      | 18 MG Road           | Bangalore | 9876545678 |   26 |
+| 1031 | Rahul Mehta     | 3 Navrangpura        | Ahmedabad | 9876501234 |   36 |
+| 1037 | Meena Yadav     | 30 Hazratganj        | Lucknow   | 9811122233 |   30 |
+| 1044 | Anjali Deshmukh | 7 Banjara Hills      | Hyderabad | 9845123456 |   31 |
+| 1051 | Manoj Chavan    | 88 Bajirao Road      | Pune      | 9898989898 |   40 |
+| 1059 | Sneha Iyer      | 5 Indira Nagar       | Bangalore | 9823450987 |   28 |
+| 1068 | Vikram Singh    | 55 Connaught Place   | Delhi     | 9834567890 |   41 |
+| 1076 | Suresh Reddy    | 17 Jubilee Hills     | Hyderabad | 9812345670 |   45 |
+| 1081 | Kiran Das       | 9 Salt Lake          | Kolkata   | 9901234567 |   33 |
+| 1091 | Swati Kulkarni  | 6 Karve Road         | Pune      | 9844001122 |   25 |
+| 1098 | Ravi Kumar      | 88 Anna Nagar        | Chennai   | 9876543120 |   32 |
++------+-----------------+----------------------+-----------+------------+------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT * FROM emp
+    ***-> WHERE start\_date REGEXP '^2021';***
+
++--------+-----------+--------------+-----------------------+----------+------------+
+| emp_id | person_id | company_name | position              | salary   | start_date |
++--------+-----------+--------------+-----------------------+----------+------------+
+|      6 |         6 | Cognizant    | HR Manager            | 65000.00 | 2021-02-18 |
+|     14 |        14 | Amazon       | Operations Manager    | 80000.00 | 2021-05-21 |
+|   1003 |       302 | Wipro        | System Analyst        | 55000.00 | 2021-01-20 |
+|   1008 |       307 | Zoho         | UI/UX Designer        | 53000.00 | 2021-07-25 |
+|   1011 |       310 | Amazon       | Cloud Engineer        | 80000.00 | 2021-10-01 |
+|   1014 |       313 | Google       | Data Scientist        | 90000.00 | 2021-03-28 |
+|   1020 |       319 | NPCI         | Cybersecurity Analyst | 75000.00 | 2021-11-30 |
+|   3013 |      1012 | HDFC Bank    | Marketing Manager     | 60000.00 | 2021-11-20 |
+|   3021 |      1023 | TCS          | HR Executive          | 55000.00 | 2021-02-10 |
+|   3056 |      1059 | Flipkart     | HR Executive          | 54000.00 | 2021-03-30 |
+|   3083 |      1081 | ICICI Bank   | Business Analyst      | 68000.00 | 2021-09-01 |
++--------+-----------+--------------+-----------------------+----------+------------+
+11 rows in set (0.00 sec)
+mysql> SELECT * FROM table_name
+    ***-> WHERE column\_name REGEXP 'pattern';***
+
+ERROR 1146 (42S02): Table 'hrdb.table_name' doesn't exist
+mysql> SELECT * FROM person
+    ***-> WHERE name REGEXP '^A';***
+
++------+-----------------+------------------+-----------+------------+------+
+| id   | name            | address          | city      | phoneno    | age  |
++------+-----------------+------------------+-----------+------------+------+
+|    1 | Aarav Sharma    | 123 MG Road      | Delhi     | 9876543210 |   25 |
+|    2 | Ananya Verma    | 456 Brigade Road | Bangalore | 9876543211 |   30 |
+|    7 | Arjun Mehta     | 234 JLN Marg     | Jaipur    | 9876543216 |   29 |
+|   13 | Ayaan Singh     | 456 Nungambakkam | Chennai   | 9876543222 |   27 |
+|  302 | Amit Sharma     | Park Street      | Kolkata   | 9823456781 |   25 |
+|  305 | Anjali Joshi    | JP Nagar         | Bangalore | 9845123456 |   31 |
+|  315 | Arun Mishra     | Gomti Nagar      | Lucknow   | 9888888888 |   33 |
+| 1007 | Amit Sharma     | 12 MG Road       | Delhi     | 9876543210 |   29 |
+| 1019 | Arjun Pandey    | 21 Fraser Road   | Patna     | 9922334455 |   38 |
+| 1044 | Anjali Deshmukh | 7 Banjara Hills  | Hyderabad | 9845123456 |   31 |
++------+-----------------+------------------+-----------+------------+------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM person
+    -> WHERE city REGEXP 'i$';
++------+---------------+---------------------+---------+------------+------+
+| id   | name          | address             | city    | phoneno    | age  |
++------+---------------+---------------------+---------+------------+------+
+|    1 | Aarav Sharma  | 123 MG Road         | Delhi   | 9876543210 |   25 |
+|    3 | Vihaan Patel  | 789 Anna Salai      | Chennai | 9876543212 |   28 |
+|    5 | Ishaan Gupta  | 654 Marine Drive    | Mumbai  | 9876543214 |   27 |
+|    9 | Kabir Nair    | 890 Carter Road     | Mumbai  | 9876543218 |   31 |
+|   11 | Rohit Khanna  | 678 MG Road         | Delhi   | 9876543220 |   34 |
+|   13 | Ayaan Singh   | 456 Nungambakkam    | Chennai | 9876543222 |   27 |
+|   15 | Karan Jain    | 321 Nariman Point   | Mumbai  | 9876543224 |   28 |
+|   19 | Tanya Kapoor  | 567 Juhu Beach      | Mumbai  | 9876543228 |   32 |
+|  300 | Ravi Kumar    | MG Road             | Mumbai  | 9876543210 |   28 |
+|  301 | Sita Verma    | Ring Road           | Delhi   | 9812345678 |   32 |
+|  306 | Rahul Desai   | Ashok Nagar         | Chennai | 9956784321 |   27 |
+|  310 | Priya Bhatia  | Andheri East        | Mumbai  | 9877891234 |   30 |
+|  311 | Vikas Thakur  | Saket               | Delhi   | 9753102468 |   26 |
+|  313 | Suresh Yadav  | Red Hills           | Chennai | 9823401122 |   36 |
+|  317 | Rajesh Kapoor | Churchgate          | Mumbai  | 9844411223 |   41 |
+| 1007 | Amit Sharma   | 12 MG Road          | Delhi   | 9876543210 |   29 |
+| 1012 | Priya Joshi   | 23 Law College Road | Mumbai  | 9908765432 |   27 |
+| 1068 | Vikram Singh  | 55 Connaught Place  | Delhi   | 9834567890 |   41 |
+| 1098 | Ravi Kumar    | 88 Anna Nagar       | Chennai | 9876543120 |   32 |
++------+---------------+---------------------+---------+------------+------+
+19 rows in set (0.00 sec)
+
+mysql> SELECT * FROM person
+    -> WHERE name REGEXP '^[A-Za-z]+ [A-Za-z]+$';
++------+-----------------+----------------------+-----------+------------+------+
+| id   | name            | address              | city      | phoneno    | age  |
++------+-----------------+----------------------+-----------+------------+------+
+|    1 | Aarav Sharma    | 123 MG Road          | Delhi     | 9876543210 |   25 |
+|    2 | Ananya Verma    | 456 Brigade Road     | Bangalore | 9876543211 |   30 |
+|    3 | Vihaan Patel    | 789 Anna Salai       | Chennai   | 9876543212 |   28 |
+|    4 | Siya Reddy      | 321 Banjara Hills    | Hyderabad | 9876543213 |   22 |
+|    5 | Ishaan Gupta    | 654 Marine Drive     | Mumbai    | 9876543214 |   27 |
+|    6 | Saanvi Rao      | 987 Park Street      | Kolkata   | 9876543215 |   24 |
+|    7 | Arjun Mehta     | 234 JLN Marg         | Jaipur    | 9876543216 |   29 |
+|    8 | Mira Joshi      | 567 Law College Road | Pune      | 9876543217 |   26 |
+|    9 | Kabir Nair      | 890 Carter Road      | Mumbai    | 9876543218 |   31 |
+|   10 | Diya Ahuja      | 345 Residency Road   | Bangalore | 9876543219 |   23 |
+|   11 | Rohit Khanna    | 678 MG Road          | Delhi     | 9876543220 |   34 |
+|   12 | Nisha Pandey    | 123 ITPL Road        | Bangalore | 9876543221 |   29 |
+|   13 | Ayaan Singh     | 456 Nungambakkam     | Chennai   | 9876543222 |   27 |
+|   14 | Riya Rao        | 789 Jubilee Hills    | Hyderabad | 9876543223 |   22 |
+|   15 | Karan Jain      | 321 Nariman Point    | Mumbai    | 9876543224 |   28 |
+|   16 | Priya Ghosh     | 654 Elgin Road       | Kolkata   | 9876543225 |   26 |
+|   17 | Rakesh Sharma   | 987 Ajmer Road       | Jaipur    | 9876543226 |   33 |
+|   18 | Sonal Desai     | 234 FC Road          | Pune      | 9876543227 |   30 |
+|   19 | Tanya Kapoor    | 567 Juhu Beach       | Mumbai    | 9876543228 |   32 |
+|   20 | Rahul Bansal    | 890 Church Street    | Bangalore | 9876543229 |   24 |
+|  300 | Ravi Kumar      | MG Road              | Mumbai    | 9876543210 |   28 |
+|  301 | Sita Verma      | Ring Road            | Delhi     | 9812345678 |   32 |
+|  302 | Amit Sharma     | Park Street          | Kolkata   | 9823456781 |   25 |
+|  303 | Pooja Singh     | Sector 15            | Noida     | 9876501234 |   29 |
+|  304 | Manoj Patil     | FC Road              | Pune      | 9765432109 |   40 |
+|  305 | Anjali Joshi    | JP Nagar             | Bangalore | 9845123456 |   31 |
+|  306 | Rahul Desai     | Ashok Nagar          | Chennai   | 9956784321 |   27 |
+|  307 | Sneha Mehta     | Alkapuri             | Vadodara  | 9632147850 |   35 |
+|  308 | Ramesh Naik     | Rajajinagar          | Bangalore | 9908765432 |   38 |
+|  309 | Kiran Kulkarni  | Swargate             | Pune      | 9812233445 |   22 |
+|  310 | Priya Bhatia    | Andheri East         | Mumbai    | 9877891234 |   30 |
+|  311 | Vikas Thakur    | Saket                | Delhi     | 9753102468 |   26 |
+|  312 | Deepa Reddy     | Charminar            | Hyderabad | 9848001122 |   34 |
+|  313 | Suresh Yadav    | Red Hills            | Chennai   | 9823401122 |   36 |
+|  314 | Neha Goyal      | Banjara Hills        | Hyderabad | 9856754321 |   24 |
+|  315 | Arun Mishra     | Gomti Nagar          | Lucknow   | 9888888888 |   33 |
+|  316 | Meena Pandey    | Hazratganj           | Lucknow   | 9911223344 |   29 |
+|  317 | Rajesh Kapoor   | Churchgate           | Mumbai    | 9844411223 |   41 |
+|  318 | Komal Jain      | Civil Lines          | Nagpur    | 9723451234 |   23 |
+|  319 | Nitin Chauhan   | Tilak Nagar          | Jaipur    | 9898761234 |   37 |
+| 1007 | Amit Sharma     | 12 MG Road           | Delhi     | 9876543210 |   29 |
+| 1012 | Priya Joshi     | 23 Law College Road  | Mumbai    | 9908765432 |   27 |
+| 1019 | Arjun Pandey    | 21 Fraser Road       | Patna     | 9922334455 |   38 |
+| 1023 | Neha Patil      | 45 FC Road           | Pune      | 9823456710 |   24 |
+| 1029 | Pooja Nair      | 18 MG Road           | Bangalore | 9876545678 |   26 |
+| 1031 | Rahul Mehta     | 3 Navrangpura        | Ahmedabad | 9876501234 |   36 |
+| 1037 | Meena Yadav     | 30 Hazratganj        | Lucknow   | 9811122233 |   30 |
+| 1044 | Anjali Deshmukh | 7 Banjara Hills      | Hyderabad | 9845123456 |   31 |
+| 1051 | Manoj Chavan    | 88 Bajirao Road      | Pune      | 9898989898 |   40 |
+| 1059 | Sneha Iyer      | 5 Indira Nagar       | Bangalore | 9823450987 |   28 |
+| 1068 | Vikram Singh    | 55 Connaught Place   | Delhi     | 9834567890 |   41 |
+| 1076 | Suresh Reddy    | 17 Jubilee Hills     | Hyderabad | 9812345670 |   45 |
+| 1081 | Kiran Das       | 9 Salt Lake          | Kolkata   | 9901234567 |   33 |
+| 1091 | Swati Kulkarni  | 6 Karve Road         | Pune      | 9844001122 |   25 |
+| 1098 | Ravi Kumar      | 88 Anna Nagar        | Chennai   | 9876543120 |   32 |
++------+-----------------+----------------------+-----------+------------+------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT * FROM person
+    -> WHERE name REGEXP 'sh';
++------+-----------------+----------------------+-----------+------------+------+
+| id   | name            | address              | city      | phoneno    | age  |
++------+-----------------+----------------------+-----------+------------+------+
+|    1 | Aarav Sharma    | 123 MG Road          | Delhi     | 9876543210 |   25 |
+|    5 | Ishaan Gupta    | 654 Marine Drive     | Mumbai    | 9876543214 |   27 |
+|    8 | Mira Joshi      | 567 Law College Road | Pune      | 9876543217 |   26 |
+|   12 | Nisha Pandey    | 123 ITPL Road        | Bangalore | 9876543221 |   29 |
+|   16 | Priya Ghosh     | 654 Elgin Road       | Kolkata   | 9876543225 |   26 |
+|   17 | Rakesh Sharma   | 987 Ajmer Road       | Jaipur    | 9876543226 |   33 |
+|  302 | Amit Sharma     | Park Street          | Kolkata   | 9823456781 |   25 |
+|  305 | Anjali Joshi    | JP Nagar             | Bangalore | 9845123456 |   31 |
+|  308 | Ramesh Naik     | Rajajinagar          | Bangalore | 9908765432 |   38 |
+|  313 | Suresh Yadav    | Red Hills            | Chennai   | 9823401122 |   36 |
+|  315 | Arun Mishra     | Gomti Nagar          | Lucknow   | 9888888888 |   33 |
+|  317 | Rajesh Kapoor   | Churchgate           | Mumbai    | 9844411223 |   41 |
+| 1007 | Amit Sharma     | 12 MG Road           | Delhi     | 9876543210 |   29 |
+| 1012 | Priya Joshi     | 23 Law College Road  | Mumbai    | 9908765432 |   27 |
+| 1044 | Anjali Deshmukh | 7 Banjara Hills      | Hyderabad | 9845123456 |   31 |
+| 1076 | Suresh Reddy    | 17 Jubilee Hills     | Hyderabad | 9812345670 |   45 |
++------+-----------------+----------------------+-----------+------------+------+
+16 rows in set (0.00 sec)
+
+mysql> SELECT * FROM emp
+    -> WHERE position REGEXP '(?i)engineer';
++--------+-----------+------------------+-------------------+----------+------------+
+| emp_id | person_id | company_name     | position          | salary   | start_date |
++--------+-----------+------------------+-------------------+----------+------------+
+|      1 |         1 | Infosys          | Software Engineer | 60000.00 | 2019-01-15 |
+|      7 |         7 | HCL Technologies | DevOps Engineer   | 75000.00 | 2018-08-25 |
+|   1001 |       300 | TCS              | Software Engineer | 60000.00 | 2020-06-15 |
+|   1009 |       308 | IBM              | DevOps Engineer   | 64000.00 | 2019-05-19 |
+|   1010 |       309 | Cognizant        | Support Engineer  | 50000.00 | 2022-02-14 |
+|   1011 |       310 | Amazon           | Cloud Engineer    | 80000.00 | 2021-10-01 |
+|   1013 |       312 | Paytm            | QA Engineer       | 56000.00 | 2020-05-15 |
+|   1015 |       314 | Microsoft        | Software Engineer | 88000.00 | 2020-08-18 |
+|   1016 |       315 | Reliance Jio     | Network Engineer  | 60000.00 | 2018-06-25 |
+|   3005 |      1007 | Infosys          | Software Engineer | 75000.00 | 2020-06-15 |
++--------+-----------+------------------+-------------------+----------+------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM person
+    -> WHERE name REGEXP '.*[aeiouAEIOU].*[aeiouAEIOU].*[aeiouAEIOU]';
++------+-----------------+----------------------+-----------+------------+------+
+| id   | name            | address              | city      | phoneno    | age  |
++------+-----------------+----------------------+-----------+------------+------+
+|    1 | Aarav Sharma    | 123 MG Road          | Delhi     | 9876543210 |   25 |
+|    2 | Ananya Verma    | 456 Brigade Road     | Bangalore | 9876543211 |   30 |
+|    3 | Vihaan Patel    | 789 Anna Salai       | Chennai   | 9876543212 |   28 |
+|    4 | Siya Reddy      | 321 Banjara Hills    | Hyderabad | 9876543213 |   22 |
+|    5 | Ishaan Gupta    | 654 Marine Drive     | Mumbai    | 9876543214 |   27 |
+|    6 | Saanvi Rao      | 987 Park Street      | Kolkata   | 9876543215 |   24 |
+|    7 | Arjun Mehta     | 234 JLN Marg         | Jaipur    | 9876543216 |   29 |
+|    8 | Mira Joshi      | 567 Law College Road | Pune      | 9876543217 |   26 |
+|    9 | Kabir Nair      | 890 Carter Road      | Mumbai    | 9876543218 |   31 |
+|   10 | Diya Ahuja      | 345 Residency Road   | Bangalore | 9876543219 |   23 |
+|   11 | Rohit Khanna    | 678 MG Road          | Delhi     | 9876543220 |   34 |
+|   12 | Nisha Pandey    | 123 ITPL Road        | Bangalore | 9876543221 |   29 |
+|   13 | Ayaan Singh     | 456 Nungambakkam     | Chennai   | 9876543222 |   27 |
+|   14 | Riya Rao        | 789 Jubilee Hills    | Hyderabad | 9876543223 |   22 |
+|   15 | Karan Jain      | 321 Nariman Point    | Mumbai    | 9876543224 |   28 |
+|   16 | Priya Ghosh     | 654 Elgin Road       | Kolkata   | 9876543225 |   26 |
+|   17 | Rakesh Sharma   | 987 Ajmer Road       | Jaipur    | 9876543226 |   33 |
+|   18 | Sonal Desai     | 234 FC Road          | Pune      | 9876543227 |   30 |
+|   19 | Tanya Kapoor    | 567 Juhu Beach       | Mumbai    | 9876543228 |   32 |
+|   20 | Rahul Bansal    | 890 Church Street    | Bangalore | 9876543229 |   24 |
+|  300 | Ravi Kumar      | MG Road              | Mumbai    | 9876543210 |   28 |
+|  301 | Sita Verma      | Ring Road            | Delhi     | 9812345678 |   32 |
+|  302 | Amit Sharma     | Park Street          | Kolkata   | 9823456781 |   25 |
+|  303 | Pooja Singh     | Sector 15            | Noida     | 9876501234 |   29 |
+|  304 | Manoj Patil     | FC Road              | Pune      | 9765432109 |   40 |
+|  305 | Anjali Joshi    | JP Nagar             | Bangalore | 9845123456 |   31 |
+|  306 | Rahul Desai     | Ashok Nagar          | Chennai   | 9956784321 |   27 |
+|  307 | Sneha Mehta     | Alkapuri             | Vadodara  | 9632147850 |   35 |
+|  308 | Ramesh Naik     | Rajajinagar          | Bangalore | 9908765432 |   38 |
+|  309 | Kiran Kulkarni  | Swargate             | Pune      | 9812233445 |   22 |
+|  310 | Priya Bhatia    | Andheri East         | Mumbai    | 9877891234 |   30 |
+|  311 | Vikas Thakur    | Saket                | Delhi     | 9753102468 |   26 |
+|  312 | Deepa Reddy     | Charminar            | Hyderabad | 9848001122 |   34 |
+|  313 | Suresh Yadav    | Red Hills            | Chennai   | 9823401122 |   36 |
+|  314 | Neha Goyal      | Banjara Hills        | Hyderabad | 9856754321 |   24 |
+|  315 | Arun Mishra     | Gomti Nagar          | Lucknow   | 9888888888 |   33 |
+|  316 | Meena Pandey    | Hazratganj           | Lucknow   | 9911223344 |   29 |
+|  317 | Rajesh Kapoor   | Churchgate           | Mumbai    | 9844411223 |   41 |
+|  318 | Komal Jain      | Civil Lines          | Nagpur    | 9723451234 |   23 |
+|  319 | Nitin Chauhan   | Tilak Nagar          | Jaipur    | 9898761234 |   37 |
+| 1007 | Amit Sharma     | 12 MG Road           | Delhi     | 9876543210 |   29 |
+| 1012 | Priya Joshi     | 23 Law College Road  | Mumbai    | 9908765432 |   27 |
+| 1019 | Arjun Pandey    | 21 Fraser Road       | Patna     | 9922334455 |   38 |
+| 1023 | Neha Patil      | 45 FC Road           | Pune      | 9823456710 |   24 |
+| 1029 | Pooja Nair      | 18 MG Road           | Bangalore | 9876545678 |   26 |
+| 1031 | Rahul Mehta     | 3 Navrangpura        | Ahmedabad | 9876501234 |   36 |
+| 1037 | Meena Yadav     | 30 Hazratganj        | Lucknow   | 9811122233 |   30 |
+| 1044 | Anjali Deshmukh | 7 Banjara Hills      | Hyderabad | 9845123456 |   31 |
+| 1051 | Manoj Chavan    | 88 Bajirao Road      | Pune      | 9898989898 |   40 |
+| 1059 | Sneha Iyer      | 5 Indira Nagar       | Bangalore | 9823450987 |   28 |
+| 1068 | Vikram Singh    | 55 Connaught Place   | Delhi     | 9834567890 |   41 |
+| 1076 | Suresh Reddy    | 17 Jubilee Hills     | Hyderabad | 9812345670 |   45 |
+| 1081 | Kiran Das       | 9 Salt Lake          | Kolkata   | 9901234567 |   33 |
+| 1091 | Swati Kulkarni  | 6 Karve Road         | Pune      | 9844001122 |   25 |
+| 1098 | Ravi Kumar      | 88 Anna Nagar        | Chennai   | 9876543120 |   32 |
++------+-----------------+----------------------+-----------+------------+------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT * FROM person
+    -> WHERE phoneno REGEXP '^[0-9]{10}$';
++------+-----------------+----------------------+-----------+------------+------+
+| id   | name            | address              | city      | phoneno    | age  |
++------+-----------------+----------------------+-----------+------------+------+
+|    1 | Aarav Sharma    | 123 MG Road          | Delhi     | 9876543210 |   25 |
+|    2 | Ananya Verma    | 456 Brigade Road     | Bangalore | 9876543211 |   30 |
+|    3 | Vihaan Patel    | 789 Anna Salai       | Chennai   | 9876543212 |   28 |
+|    4 | Siya Reddy      | 321 Banjara Hills    | Hyderabad | 9876543213 |   22 |
+|    5 | Ishaan Gupta    | 654 Marine Drive     | Mumbai    | 9876543214 |   27 |
+|    6 | Saanvi Rao      | 987 Park Street      | Kolkata   | 9876543215 |   24 |
+|    7 | Arjun Mehta     | 234 JLN Marg         | Jaipur    | 9876543216 |   29 |
+|    8 | Mira Joshi      | 567 Law College Road | Pune      | 9876543217 |   26 |
+|    9 | Kabir Nair      | 890 Carter Road      | Mumbai    | 9876543218 |   31 |
+|   10 | Diya Ahuja      | 345 Residency Road   | Bangalore | 9876543219 |   23 |
+|   11 | Rohit Khanna    | 678 MG Road          | Delhi     | 9876543220 |   34 |
+|   12 | Nisha Pandey    | 123 ITPL Road        | Bangalore | 9876543221 |   29 |
+|   13 | Ayaan Singh     | 456 Nungambakkam     | Chennai   | 9876543222 |   27 |
+|   14 | Riya Rao        | 789 Jubilee Hills    | Hyderabad | 9876543223 |   22 |
+|   15 | Karan Jain      | 321 Nariman Point    | Mumbai    | 9876543224 |   28 |
+|   16 | Priya Ghosh     | 654 Elgin Road       | Kolkata   | 9876543225 |   26 |
+|   17 | Rakesh Sharma   | 987 Ajmer Road       | Jaipur    | 9876543226 |   33 |
+|   18 | Sonal Desai     | 234 FC Road          | Pune      | 9876543227 |   30 |
+|   19 | Tanya Kapoor    | 567 Juhu Beach       | Mumbai    | 9876543228 |   32 |
+|   20 | Rahul Bansal    | 890 Church Street    | Bangalore | 9876543229 |   24 |
+|  300 | Ravi Kumar      | MG Road              | Mumbai    | 9876543210 |   28 |
+|  301 | Sita Verma      | Ring Road            | Delhi     | 9812345678 |   32 |
+|  302 | Amit Sharma     | Park Street          | Kolkata   | 9823456781 |   25 |
+|  303 | Pooja Singh     | Sector 15            | Noida     | 9876501234 |   29 |
+|  304 | Manoj Patil     | FC Road              | Pune      | 9765432109 |   40 |
+|  305 | Anjali Joshi    | JP Nagar             | Bangalore | 9845123456 |   31 |
+|  306 | Rahul Desai     | Ashok Nagar          | Chennai   | 9956784321 |   27 |
+|  307 | Sneha Mehta     | Alkapuri             | Vadodara  | 9632147850 |   35 |
+|  308 | Ramesh Naik     | Rajajinagar          | Bangalore | 9908765432 |   38 |
+|  309 | Kiran Kulkarni  | Swargate             | Pune      | 9812233445 |   22 |
+|  310 | Priya Bhatia    | Andheri East         | Mumbai    | 9877891234 |   30 |
+|  311 | Vikas Thakur    | Saket                | Delhi     | 9753102468 |   26 |
+|  312 | Deepa Reddy     | Charminar            | Hyderabad | 9848001122 |   34 |
+|  313 | Suresh Yadav    | Red Hills            | Chennai   | 9823401122 |   36 |
+|  314 | Neha Goyal      | Banjara Hills        | Hyderabad | 9856754321 |   24 |
+|  315 | Arun Mishra     | Gomti Nagar          | Lucknow   | 9888888888 |   33 |
+|  316 | Meena Pandey    | Hazratganj           | Lucknow   | 9911223344 |   29 |
+|  317 | Rajesh Kapoor   | Churchgate           | Mumbai    | 9844411223 |   41 |
+|  318 | Komal Jain      | Civil Lines          | Nagpur    | 9723451234 |   23 |
+|  319 | Nitin Chauhan   | Tilak Nagar          | Jaipur    | 9898761234 |   37 |
+| 1007 | Amit Sharma     | 12 MG Road           | Delhi     | 9876543210 |   29 |
+| 1012 | Priya Joshi     | 23 Law College Road  | Mumbai    | 9908765432 |   27 |
+| 1019 | Arjun Pandey    | 21 Fraser Road       | Patna     | 9922334455 |   38 |
+| 1023 | Neha Patil      | 45 FC Road           | Pune      | 9823456710 |   24 |
+| 1029 | Pooja Nair      | 18 MG Road           | Bangalore | 9876545678 |   26 |
+| 1031 | Rahul Mehta     | 3 Navrangpura        | Ahmedabad | 9876501234 |   36 |
+| 1037 | Meena Yadav     | 30 Hazratganj        | Lucknow   | 9811122233 |   30 |
+| 1044 | Anjali Deshmukh | 7 Banjara Hills      | Hyderabad | 9845123456 |   31 |
+| 1051 | Manoj Chavan    | 88 Bajirao Road      | Pune      | 9898989898 |   40 |
+| 1059 | Sneha Iyer      | 5 Indira Nagar       | Bangalore | 9823450987 |   28 |
+| 1068 | Vikram Singh    | 55 Connaught Place   | Delhi     | 9834567890 |   41 |
+| 1076 | Suresh Reddy    | 17 Jubilee Hills     | Hyderabad | 9812345670 |   45 |
+| 1081 | Kiran Das       | 9 Salt Lake          | Kolkata   | 9901234567 |   33 |
+| 1091 | Swati Kulkarni  | 6 Karve Road         | Pune      | 9844001122 |   25 |
+| 1098 | Ravi Kumar      | 88 Anna Nagar        | Chennai   | 9876543120 |   32 |
++------+-----------------+----------------------+-----------+------------+------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT * FROM emp
+    -> WHERE start_date REGEXP '^2021|^2022';
++--------+-----------+---------------+-----------------------+----------+------------+
+| emp_id | person_id | company_name  | position              | salary   | start_date |
++--------+-----------+---------------+-----------------------+----------+------------+
+|      6 |         6 | Cognizant     | HR Manager            | 65000.00 | 2021-02-18 |
+|     14 |        14 | Amazon        | Operations Manager    | 80000.00 | 2021-05-21 |
+|   1003 |       302 | Wipro         | System Analyst        | 55000.00 | 2021-01-20 |
+|   1004 |       303 | Tech Mahindra | Frontend Developer    | 62000.00 | 2022-04-05 |
+|   1008 |       307 | Zoho          | UI/UX Designer        | 53000.00 | 2021-07-25 |
+|   1010 |       309 | Cognizant     | Support Engineer      | 50000.00 | 2022-02-14 |
+|   1011 |       310 | Amazon        | Cloud Engineer        | 80000.00 | 2021-10-01 |
+|   1014 |       313 | Google        | Data Scientist        | 90000.00 | 2021-03-28 |
+|   1017 |       316 | Byju's        | Content Developer     | 47000.00 | 2022-01-12 |
+|   1020 |       319 | NPCI          | Cybersecurity Analyst | 75000.00 | 2021-11-30 |
+|   3013 |      1012 | HDFC Bank     | Marketing Manager     | 60000.00 | 2021-11-20 |
+|   3021 |      1023 | TCS           | HR Executive          | 55000.00 | 2021-02-10 |
+|   3040 |      1044 | Amazon India  | Software Developer    | 80000.00 | 2022-01-05 |
+|   3050 |      1051 | Zensar        | System Admin          | 53000.00 | 2022-08-21 |
+|   3056 |      1059 | Flipkart      | HR Executive          | 54000.00 | 2021-03-30 |
+|   3083 |      1081 | ICICI Bank    | Business Analyst      | 68000.00 | 2021-09-01 |
++--------+-----------+---------------+-----------------------+----------+------------+
+16 rows in set (0.00 sec)
+
+mysql> -- Expected: Join person + emp, filter name + position
+mysql> SELECT p.name, e.position
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> WHERE p.name REGEXP '^A' AND e.position REGEXP '(?i)engineer';
++--------------+-------------------+
+| name         | position          |
++--------------+-------------------+
+| Aarav Sharma | Software Engineer |
+| Arjun Mehta  | DevOps Engineer   |
+| Arun Mishra  | Network Engineer  |
+| Amit Sharma  | Software Engineer |
++--------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT p.name, p.phoneno, e.salary
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> WHERE p.phoneno REGEXP '^(98|99)' AND e.salary > 60000;
++-----------------+------------+-----------+
+| name            | phoneno    | salary    |
++-----------------+------------+-----------+
+| Ananya Verma    | 9876543211 |  85000.00 |
+| Ishaan Gupta    | 9876543214 |  70000.00 |
+| Saanvi Rao      | 9876543215 |  65000.00 |
+| Arjun Mehta     | 9876543216 |  75000.00 |
+| Mira Joshi      | 9876543217 |  90000.00 |
+| Kabir Nair      | 9876543218 | 120000.00 |
+| Diya Ahuja      | 9876543219 |  95000.00 |
+| Rohit Khanna    | 9876543220 |  85000.00 |
+| Nisha Pandey    | 9876543221 |  95000.00 |
+| Ayaan Singh     | 9876543222 |  75000.00 |
+| Riya Rao        | 9876543223 |  80000.00 |
+| Karan Jain      | 9876543224 |  70000.00 |
+| Priya Ghosh     | 9876543225 |  90000.00 |
+| Rakesh Sharma   | 9876543226 |  95000.00 |
+| Sonal Desai     | 9876543227 | 100000.00 |
+| Tanya Kapoor    | 9876543228 |  85000.00 |
+| Rahul Bansal    | 9876543229 |  70000.00 |
+| Pooja Singh     | 9876501234 |  62000.00 |
+| Anjali Joshi    | 9845123456 |  75000.00 |
+| Ramesh Naik     | 9908765432 |  64000.00 |
+| Priya Bhatia    | 9877891234 |  80000.00 |
+| Suresh Yadav    | 9823401122 |  90000.00 |
+| Neha Goyal      | 9856754321 |  88000.00 |
+| Nitin Chauhan   | 9898761234 |  75000.00 |
+| Amit Sharma     | 9876543210 |  75000.00 |
+| Pooja Nair      | 9876545678 |  63000.00 |
+| Rahul Mehta     | 9876501234 |  72000.00 |
+| Meena Yadav     | 9811122233 |  61000.00 |
+| Anjali Deshmukh | 9845123456 |  80000.00 |
+| Vikram Singh    | 9834567890 |  95000.00 |
+| Kiran Das       | 9901234567 |  68000.00 |
+| Ravi Kumar      | 9876543120 |  67000.00 |
+| Suresh Reddy    | 9812345670 |  90000.00 |
++-----------------+------------+-----------+
+33 rows in set (0.00 sec)
+
+mysql> SELECT p.name
+    -> FROM person p
+    -> LEFT JOIN emp e ON p.id = e.person_id
+    -> WHERE e.emp_id IS NULL AND p.name REGEXP 'a$';
+Empty set (0.00 sec)
+
+mysql> SELECT p.name, e.start_date, e.position
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> WHERE e.start_date REGEXP '^2021|^2022' AND e.position REGEXP '(?i)developer';
++-----------------+------------+--------------------+
+| name            | start_date | position           |
++-----------------+------------+--------------------+
+| Pooja Singh     | 2022-04-05 | Frontend Developer |
+| Meena Pandey    | 2022-01-12 | Content Developer  |
+| Anjali Deshmukh | 2022-01-05 | Software Developer |
++-----------------+------------+--------------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT DISTINCT p.city
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> WHERE p.name REGEXP '.*[aeiouAEIOU].*[aeiouAEIOU].*[aeiouAEIOU]';
++-----------+
+| city      |
++-----------+
+| Delhi     |
+| Bangalore |
+| Chennai   |
+| Hyderabad |
+| Mumbai    |
+| Kolkata   |
+| Jaipur    |
+| Pune      |
+| Noida     |
+| Vadodara  |
+| Lucknow   |
+| Nagpur    |
+| Patna     |
+| Ahmedabad |
++-----------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT p.name
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> WHERE p.name REGEXP '^[A-Za-z ]+$';
++-----------------+
+| name            |
++-----------------+
+| Aarav Sharma    |
+| Ananya Verma    |
+| Vihaan Patel    |
+| Siya Reddy      |
+| Ishaan Gupta    |
+| Saanvi Rao      |
+| Arjun Mehta     |
+| Mira Joshi      |
+| Kabir Nair      |
+| Diya Ahuja      |
+| Rohit Khanna    |
+| Nisha Pandey    |
+| Ayaan Singh     |
+| Riya Rao        |
+| Karan Jain      |
+| Priya Ghosh     |
+| Rakesh Sharma   |
+| Sonal Desai     |
+| Tanya Kapoor    |
+| Rahul Bansal    |
+| Ravi Kumar      |
+| Sita Verma      |
+| Amit Sharma     |
+| Pooja Singh     |
+| Manoj Patil     |
+| Anjali Joshi    |
+| Rahul Desai     |
+| Sneha Mehta     |
+| Ramesh Naik     |
+| Kiran Kulkarni  |
+| Priya Bhatia    |
+| Vikas Thakur    |
+| Deepa Reddy     |
+| Suresh Yadav    |
+| Neha Goyal      |
+| Arun Mishra     |
+| Meena Pandey    |
+| Rajesh Kapoor   |
+| Komal Jain      |
+| Nitin Chauhan   |
+| Amit Sharma     |
+| Priya Joshi     |
+| Arjun Pandey    |
+| Neha Patil      |
+| Pooja Nair      |
+| Rahul Mehta     |
+| Meena Yadav     |
+| Anjali Deshmukh |
+| Manoj Chavan    |
+| Sneha Iyer      |
+| Vikram Singh    |
+| Suresh Reddy    |
+| Kiran Das       |
+| Swati Kulkarni  |
+| Ravi Kumar      |
++-----------------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT e.company_name, COUNT(*) AS total_employees
+    -> FROM emp e
+    -> WHERE e.company_name REGEXP '^[CA]'
+    -> GROUP BY e.company_name;
++--------------+-----------------+
+| company_name | total_employees |
++--------------+-----------------+
+| Accenture    |               2 |
+| Cognizant    |               4 |
+| Amazon       |               2 |
+| Capgemini    |               3 |
+| Airtel       |               1 |
+| Amazon India |               1 |
++--------------+-----------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT p.name, e.position
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> WHERE p.name REGEXP '[-@]' AND e.position REGEXP '(?i)manager';
+Empty set (0.00 sec)
+
+mysql> SELECT p.name, p.phoneno, e.salary
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> WHERE p.name REGEXP '^[A-Za-z]+ [A-Za-z]+$'
+    ->   AND p.phoneno REGEXP '^[0-9]{10}$'
+    ->   AND e.salary > 70000;
++-----------------+------------+-----------+
+| name            | phoneno    | salary    |
++-----------------+------------+-----------+
+| Ananya Verma    | 9876543211 |  85000.00 |
+| Arjun Mehta     | 9876543216 |  75000.00 |
+| Mira Joshi      | 9876543217 |  90000.00 |
+| Kabir Nair      | 9876543218 | 120000.00 |
+| Diya Ahuja      | 9876543219 |  95000.00 |
+| Rohit Khanna    | 9876543220 |  85000.00 |
+| Nisha Pandey    | 9876543221 |  95000.00 |
+| Ayaan Singh     | 9876543222 |  75000.00 |
+| Riya Rao        | 9876543223 |  80000.00 |
+| Priya Ghosh     | 9876543225 |  90000.00 |
+| Rakesh Sharma   | 9876543226 |  95000.00 |
+| Sonal Desai     | 9876543227 | 100000.00 |
+| Tanya Kapoor    | 9876543228 |  85000.00 |
+| Anjali Joshi    | 9845123456 |  75000.00 |
+| Priya Bhatia    | 9877891234 |  80000.00 |
+| Suresh Yadav    | 9823401122 |  90000.00 |
+| Neha Goyal      | 9856754321 |  88000.00 |
+| Nitin Chauhan   | 9898761234 |  75000.00 |
+| Amit Sharma     | 9876543210 |  75000.00 |
+| Rahul Mehta     | 9876501234 |  72000.00 |
+| Anjali Deshmukh | 9845123456 |  80000.00 |
+| Vikram Singh    | 9834567890 |  95000.00 |
+| Suresh Reddy    | 9812345670 |  90000.00 |
++-----------------+------------+-----------+
+23 rows in set (0.00 sec)
+
+mysql> SELECT p.name, p.city, e.position
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> WHERE p.city REGEXP '(?i)pune|bangalore'
+    ->   AND e.position REGEXP '(?i)engineer';
++----------------+-----------+------------------+
+| name           | city      | position         |
++----------------+-----------+------------------+
+| Ramesh Naik    | Bangalore | DevOps Engineer  |
+| Kiran Kulkarni | Pune      | Support Engineer |
++----------------+-----------+------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT p.name, p.city, e.company_name
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id;
++-----------------+-----------+---------------------------+
+| name            | city      | company_name              |
++-----------------+-----------+---------------------------+
+| Aarav Sharma    | Delhi     | Infosys                   |
+| Ananya Verma    | Bangalore | Wipro                     |
+| Vihaan Patel    | Chennai   | Tata Consultancy Services |
+| Siya Reddy      | Hyderabad | Tech Mahindra             |
+| Ishaan Gupta    | Mumbai    | Accenture                 |
+| Saanvi Rao      | Kolkata   | Cognizant                 |
+| Arjun Mehta     | Jaipur    | HCL Technologies          |
+| Mira Joshi      | Pune      | IBM                       |
+| Kabir Nair      | Mumbai    | Microsoft                 |
+| Diya Ahuja      | Bangalore | Google                    |
+| Rohit Khanna    | Delhi     | TCS                       |
+| Nisha Pandey    | Bangalore | Flipkart                  |
+| Ayaan Singh     | Chennai   | Cognizant                 |
+| Riya Rao        | Hyderabad | Amazon                    |
+| Karan Jain      | Mumbai    | Reliance Industries       |
+| Priya Ghosh     | Kolkata   | Wipro                     |
+| Rakesh Sharma   | Jaipur    | HDFC Bank                 |
+| Sonal Desai     | Pune      | Infosys                   |
+| Tanya Kapoor    | Mumbai    | Capgemini                 |
+| Rahul Bansal    | Bangalore | Zomato                    |
+| Ravi Kumar      | Mumbai    | TCS                       |
+| Sita Verma      | Delhi     | Infosys                   |
+| Amit Sharma     | Kolkata   | Wipro                     |
+| Pooja Singh     | Noida     | Tech Mahindra             |
+| Manoj Patil     | Pune      | Capgemini                 |
+| Anjali Joshi    | Bangalore | Accenture                 |
+| Rahul Desai     | Chennai   | HCL                       |
+| Sneha Mehta     | Vadodara  | Zoho                      |
+| Ramesh Naik     | Bangalore | IBM                       |
+| Kiran Kulkarni  | Pune      | Cognizant                 |
+| Priya Bhatia    | Mumbai    | Amazon                    |
+| Vikas Thakur    | Delhi     | Flipkart                  |
+| Deepa Reddy     | Hyderabad | Paytm                     |
+| Suresh Yadav    | Chennai   | Google                    |
+| Neha Goyal      | Hyderabad | Microsoft                 |
+| Arun Mishra     | Lucknow   | Reliance Jio              |
+| Meena Pandey    | Lucknow   | Byju's                    |
+| Rajesh Kapoor   | Mumbai    | Zomato                    |
+| Komal Jain      | Nagpur    | Airtel                    |
+| Nitin Chauhan   | Jaipur    | NPCI                      |
+| Amit Sharma     | Delhi     | Infosys                   |
+| Priya Joshi     | Mumbai    | HDFC Bank                 |
+| Arjun Pandey    | Patna     | Wipro                     |
+| Neha Patil      | Pune      | TCS                       |
+| Pooja Nair      | Bangalore | Capgemini                 |
+| Rahul Mehta     | Ahmedabad | Reliance                  |
+| Meena Yadav     | Lucknow   | IBM                       |
+| Anjali Deshmukh | Hyderabad | Amazon India              |
+| Manoj Chavan    | Pune      | Zensar                    |
+| Sneha Iyer      | Bangalore | Flipkart                  |
+| Vikram Singh    | Delhi     | Deloitte                  |
+| Suresh Reddy    | Hyderabad | Cognizant                 |
+| Kiran Das       | Kolkata   | ICICI Bank                |
+| Swati Kulkarni  | Pune      | Infosys                   |
+| Ravi Kumar      | Chennai   | Wipro                     |
++-----------------+-----------+---------------------------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT p.name, e.position
+    -> FROM person p
+    -> LEFT JOIN emp e ON p.id = e.person_id;
++-----------------+-----------------------+
+| name            | position              |
++-----------------+-----------------------+
+| Aarav Sharma    | Software Engineer     |
+| Ananya Verma    | Project Manager       |
+| Vihaan Patel    | Data Analyst          |
+| Siya Reddy      | Business Analyst      |
+| Ishaan Gupta    | Senior Developer      |
+| Saanvi Rao      | HR Manager            |
+| Arjun Mehta     | DevOps Engineer       |
+| Mira Joshi      | Consultant            |
+| Kabir Nair      | Product Manager       |
+| Diya Ahuja      | UX Designer           |
+| Rohit Khanna    | Senior Consultant     |
+| Nisha Pandey    | Data Scientist        |
+| Ayaan Singh     | Full Stack Developer  |
+| Riya Rao        | Operations Manager    |
+| Karan Jain      | Business Analyst      |
+| Priya Ghosh     | IT Consultant         |
+| Rakesh Sharma   | Branch Manager        |
+| Sonal Desai     | System Architect      |
+| Tanya Kapoor    | Project Lead          |
+| Rahul Bansal    | Marketing Manager     |
+| Ravi Kumar      | Software Engineer     |
+| Sita Verma      | HR Executive          |
+| Amit Sharma     | System Analyst        |
+| Pooja Singh     | Frontend Developer    |
+| Manoj Patil     | Backend Developer     |
+| Anjali Joshi    | Project Manager       |
+| Rahul Desai     | Software Tester       |
+| Sneha Mehta     | UI/UX Designer        |
+| Ramesh Naik     | DevOps Engineer       |
+| Kiran Kulkarni  | Support Engineer      |
+| Priya Bhatia    | Cloud Engineer        |
+| Vikas Thakur    | Business Analyst      |
+| Deepa Reddy     | QA Engineer           |
+| Suresh Yadav    | Data Scientist        |
+| Neha Goyal      | Software Engineer     |
+| Arun Mishra     | Network Engineer      |
+| Meena Pandey    | Content Developer     |
+| Rajesh Kapoor   | Marketing Executive   |
+| Komal Jain      | Sales Executive       |
+| Nitin Chauhan   | Cybersecurity Analyst |
+| Amit Sharma     | Software Engineer     |
+| Priya Joshi     | Marketing Manager     |
+| Arjun Pandey    | Tech Support          |
+| Neha Patil      | HR Executive          |
+| Pooja Nair      | Accountant            |
+| Rahul Mehta     | Operations Manager    |
+| Meena Yadav     | Marketing Executive   |
+| Anjali Deshmukh | Software Developer    |
+| Manoj Chavan    | System Admin          |
+| Sneha Iyer      | HR Executive          |
+| Vikram Singh    | Consultant            |
+| Suresh Reddy    | Tech Lead             |
+| Kiran Das       | Business Analyst      |
+| Swati Kulkarni  | Intern                |
+| Ravi Kumar      | Financial Analyst     |
++-----------------+-----------------------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT p.name, e.start_date
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> WHERE e.start_date < '2020-01-01';
++---------------+------------+
+| name          | start_date |
++---------------+------------+
+| Aarav Sharma  | 2019-01-15 |
+| Ananya Verma  | 2018-03-22 |
+| Siya Reddy    | 2019-07-10 |
+| Ishaan Gupta  | 2017-11-05 |
+| Arjun Mehta   | 2018-08-25 |
+| Kabir Nair    | 2016-12-11 |
+| Diya Ahuja    | 2019-04-20 |
+| Rohit Khanna  | 2018-02-12 |
+| Ayaan Singh   | 2019-04-18 |
+| Karan Jain    | 2017-03-01 |
+| Priya Ghosh   | 2018-11-10 |
+| Rakesh Sharma | 2019-06-15 |
+| Sonal Desai   | 2016-09-12 |
+| Tanya Kapoor  | 2017-01-05 |
+| Sita Verma    | 2019-03-10 |
+| Manoj Patil   | 2018-11-30 |
+| Anjali Joshi  | 2017-08-12 |
+| Ramesh Naik   | 2019-05-19 |
+| Vikas Thakur  | 2019-12-10 |
+| Arun Mishra   | 2018-06-25 |
+| Rajesh Kapoor | 2019-09-05 |
+| Pooja Nair    | 2019-05-10 |
+| Vikram Singh  | 2017-07-18 |
+| Ravi Kumar    | 2019-08-01 |
+| Suresh Reddy  | 2018-04-25 |
++---------------+------------+
+25 rows in set (0.00 sec)
+
+mysql> SELECT p.name, e.salary
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> WHERE e.salary < 50000;
++----------------+----------+
+| name           | salary   |
++----------------+----------+
+| Meena Pandey   | 47000.00 |
+| Komal Jain     | 45000.00 |
+| Arjun Pandey   | 48000.00 |
+| Swati Kulkarni | 25000.00 |
++----------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT p.name, p.city, e.company_name
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> WHERE p.city = 'Mumbai';
++---------------+--------+---------------------+
+| name          | city   | company_name        |
++---------------+--------+---------------------+
+| Ishaan Gupta  | Mumbai | Accenture           |
+| Kabir Nair    | Mumbai | Microsoft           |
+| Karan Jain    | Mumbai | Reliance Industries |
+| Tanya Kapoor  | Mumbai | Capgemini           |
+| Ravi Kumar    | Mumbai | TCS                 |
+| Priya Bhatia  | Mumbai | Amazon              |
+| Rajesh Kapoor | Mumbai | Zomato              |
+| Priya Joshi   | Mumbai | HDFC Bank           |
++---------------+--------+---------------------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT p.name
+    -> FROM person p
+    -> LEFT JOIN emp e ON p.id = e.person_id
+    -> WHERE e.emp_id IS NULL;
+Empty set (0.00 sec)
+
+mysql> SELECT p.name, e.position
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> WHERE e.position = 'Software Engineer';
++--------------+-------------------+
+| name         | position          |
++--------------+-------------------+
+| Aarav Sharma | Software Engineer |
+| Ravi Kumar   | Software Engineer |
+| Neha Goyal   | Software Engineer |
+| Amit Sharma  | Software Engineer |
++--------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT p.name, e.salary
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> ORDER BY e.salary DESC;
++-----------------+-----------+
+| name            | salary    |
++-----------------+-----------+
+| Kabir Nair      | 120000.00 |
+| Sonal Desai     | 100000.00 |
+| Diya Ahuja      |  95000.00 |
+| Nisha Pandey    |  95000.00 |
+| Rakesh Sharma   |  95000.00 |
+| Vikram Singh    |  95000.00 |
+| Suresh Yadav    |  90000.00 |
+| Mira Joshi      |  90000.00 |
+| Priya Ghosh     |  90000.00 |
+| Suresh Reddy    |  90000.00 |
+| Neha Goyal      |  88000.00 |
+| Rohit Khanna    |  85000.00 |
+| Ananya Verma    |  85000.00 |
+| Tanya Kapoor    |  85000.00 |
+| Priya Bhatia    |  80000.00 |
+| Riya Rao        |  80000.00 |
+| Anjali Deshmukh |  80000.00 |
+| Amit Sharma     |  75000.00 |
+| Arjun Mehta     |  75000.00 |
+| Ayaan Singh     |  75000.00 |
+| Nitin Chauhan   |  75000.00 |
+| Anjali Joshi    |  75000.00 |
+| Rahul Mehta     |  72000.00 |
+| Ishaan Gupta    |  70000.00 |
+| Karan Jain      |  70000.00 |
+| Rahul Bansal    |  70000.00 |
+| Vikas Thakur    |  70000.00 |
+| Kiran Das       |  68000.00 |
+| Ravi Kumar      |  67000.00 |
+| Saanvi Rao      |  65000.00 |
+| Ramesh Naik     |  64000.00 |
+| Pooja Nair      |  63000.00 |
+| Pooja Singh     |  62000.00 |
+| Meena Yadav     |  61000.00 |
+| Aarav Sharma    |  60000.00 |
+| Arun Mishra     |  60000.00 |
+| Ravi Kumar      |  60000.00 |
+| Priya Joshi     |  60000.00 |
+| Manoj Patil     |  58000.00 |
+| Deepa Reddy     |  56000.00 |
+| Amit Sharma     |  55000.00 |
+| Vihaan Patel    |  55000.00 |
+| Neha Patil      |  55000.00 |
+| Sneha Iyer      |  54000.00 |
+| Sneha Mehta     |  53000.00 |
+| Manoj Chavan    |  53000.00 |
+| Rahul Desai     |  52000.00 |
+| Rajesh Kapoor   |  52000.00 |
+| Kiran Kulkarni  |  50000.00 |
+| Sita Verma      |  50000.00 |
+| Siya Reddy      |  50000.00 |
+| Arjun Pandey    |  48000.00 |
+| Meena Pandey    |  47000.00 |
+| Komal Jain      |  45000.00 |
+| Swati Kulkarni  |  25000.00 |
++-----------------+-----------+
+55 rows in set (0.00 sec)
+
+mysql> SELECT p.city, AVG(e.salary) AS avg_salary
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> GROUP BY p.city;
++-----------+--------------+
+| city      | avg_salary   |
++-----------+--------------+
+| Delhi     | 72500.000000 |
+| Bangalore | 75125.000000 |
+| Chennai   | 67800.000000 |
+| Hyderabad | 74000.000000 |
+| Mumbai    | 74625.000000 |
+| Kolkata   | 69500.000000 |
+| Jaipur    | 81666.666667 |
+| Pune      | 61571.428571 |
+| Noida     | 62000.000000 |
+| Vadodara  | 53000.000000 |
+| Lucknow   | 56000.000000 |
+| Nagpur    | 45000.000000 |
+| Patna     | 48000.000000 |
+| Ahmedabad | 72000.000000 |
++-----------+--------------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT e.company_name, COUNT(*) AS employee_count
+    -> FROM emp e
+    -> GROUP BY e.company_name;
++---------------------------+----------------+
+| company_name              | employee_count |
++---------------------------+----------------+
+| Infosys                   |              5 |
+| Wipro                     |              5 |
+| Tata Consultancy Services |              1 |
+| Tech Mahindra             |              2 |
+| Accenture                 |              2 |
+| Cognizant                 |              4 |
+| HCL Technologies          |              1 |
+| IBM                       |              3 |
+| Microsoft                 |              2 |
+| Google                    |              2 |
+| TCS                       |              3 |
+| Flipkart                  |              3 |
+| Amazon                    |              2 |
+| Reliance Industries       |              1 |
+| HDFC Bank                 |              2 |
+| Capgemini                 |              3 |
+| Zomato                    |              2 |
+| HCL                       |              1 |
+| Zoho                      |              1 |
+| Paytm                     |              1 |
+| Reliance Jio              |              1 |
+| Byju's                    |              1 |
+| Airtel                    |              1 |
+| NPCI                      |              1 |
+| Reliance                  |              1 |
+| Amazon India              |              1 |
+| Zensar                    |              1 |
+| Deloitte                  |              1 |
+| ICICI Bank                |              1 |
++---------------------------+----------------+
+29 rows in set (0.00 sec)
+
+mysql> SELECT p.city, SUM(e.salary) AS total_salary
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> GROUP BY p.city;
++-----------+--------------+
+| city      | total_salary |
++-----------+--------------+
+| Delhi     |    435000.00 |
+| Bangalore |    601000.00 |
+| Chennai   |    339000.00 |
+| Hyderabad |    444000.00 |
+| Mumbai    |    597000.00 |
+| Kolkata   |    278000.00 |
+| Jaipur    |    245000.00 |
+| Pune      |    431000.00 |
+| Noida     |     62000.00 |
+| Vadodara  |     53000.00 |
+| Lucknow   |    168000.00 |
+| Nagpur    |     45000.00 |
+| Patna     |     48000.00 |
+| Ahmedabad |     72000.00 |
++-----------+--------------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT p.name, p.age, e.position
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> WHERE p.age BETWEEN 25 AND 35;
++-----------------+------+----------------------+
+| name            | age  | position             |
++-----------------+------+----------------------+
+| Aarav Sharma    |   25 | Software Engineer    |
+| Ananya Verma    |   30 | Project Manager      |
+| Vihaan Patel    |   28 | Data Analyst         |
+| Ishaan Gupta    |   27 | Senior Developer     |
+| Arjun Mehta     |   29 | DevOps Engineer      |
+| Mira Joshi      |   26 | Consultant           |
+| Kabir Nair      |   31 | Product Manager      |
+| Rohit Khanna    |   34 | Senior Consultant    |
+| Nisha Pandey    |   29 | Data Scientist       |
+| Ayaan Singh     |   27 | Full Stack Developer |
+| Karan Jain      |   28 | Business Analyst     |
+| Priya Ghosh     |   26 | IT Consultant        |
+| Rakesh Sharma   |   33 | Branch Manager       |
+| Sonal Desai     |   30 | System Architect     |
+| Tanya Kapoor    |   32 | Project Lead         |
+| Ravi Kumar      |   28 | Software Engineer    |
+| Sita Verma      |   32 | HR Executive         |
+| Amit Sharma     |   25 | System Analyst       |
+| Pooja Singh     |   29 | Frontend Developer   |
+| Anjali Joshi    |   31 | Project Manager      |
+| Rahul Desai     |   27 | Software Tester      |
+| Sneha Mehta     |   35 | UI/UX Designer       |
+| Priya Bhatia    |   30 | Cloud Engineer       |
+| Vikas Thakur    |   26 | Business Analyst     |
+| Deepa Reddy     |   34 | QA Engineer          |
+| Arun Mishra     |   33 | Network Engineer     |
+| Meena Pandey    |   29 | Content Developer    |
+| Amit Sharma     |   29 | Software Engineer    |
+| Priya Joshi     |   27 | Marketing Manager    |
+| Pooja Nair      |   26 | Accountant           |
+| Meena Yadav     |   30 | Marketing Executive  |
+| Anjali Deshmukh |   31 | Software Developer   |
+| Sneha Iyer      |   28 | HR Executive         |
+| Kiran Das       |   33 | Business Analyst     |
+| Swati Kulkarni  |   25 | Intern               |
+| Ravi Kumar      |   32 | Financial Analyst    |
++-----------------+------+----------------------+
+36 rows in set (0.00 sec)
+
+mysql> SELECT p.city, MIN(p.age) AS youngest_age
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> GROUP BY p.city;
++-----------+--------------+
+| city      | youngest_age |
++-----------+--------------+
+| Delhi     |           25 |
+| Bangalore |           23 |
+| Chennai   |           27 |
+| Hyderabad |           22 |
+| Mumbai    |           27 |
+| Kolkata   |           24 |
+| Jaipur    |           29 |
+| Pune      |           22 |
+| Noida     |           29 |
+| Vadodara  |           35 |
+| Lucknow   |           29 |
+| Nagpur    |           23 |
+| Patna     |           38 |
+| Ahmedabad |           36 |
++-----------+--------------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT p.city, AVG(p.age) AS AVG_age
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> GROUP BY p.city;
++-----------+---------+
+| city      | AVG_age |
++-----------+---------+
+| Delhi     | 31.1667 |
+| Bangalore | 28.6250 |
+| Chennai   | 30.0000 |
+| Hyderabad | 29.6667 |
+| Mumbai    | 30.5000 |
+| Kolkata   | 27.0000 |
+| Jaipur    | 33.0000 |
+| Pune      | 29.5714 |
+| Noida     | 29.0000 |
+| Vadodara  | 35.0000 |
+| Lucknow   | 30.6667 |
+| Nagpur    | 23.0000 |
+| Patna     | 38.0000 |
+| Ahmedabad | 36.0000 |
++-----------+---------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT p.city, round(MIN(p.age)) AS youngest_age
+    -> FROM person p
+    -> JOIN emp e ON p.id = e.person_id
+    -> GROUP BY p.city;
++-----------+--------------+
+| city      | youngest_age |
++-----------+--------------+
+| Delhi     |           25 |
+| Bangalore |           23 |
+| Chennai   |           27 |
+| Hyderabad |           22 |
+| Mumbai    |           27 |
+| Kolkata   |           24 |
+| Jaipur    |           29 |
+| Pune      |           22 |
+| Noida     |           29 |
+| Vadodara  |           35 |
+| Lucknow   |           29 |
+| Nagpur    |           23 |
+| Patna     |           38 |
+| Ahmedabad |           36 |
++-----------+--------------+
+14 rows in set (0.01 sec)
